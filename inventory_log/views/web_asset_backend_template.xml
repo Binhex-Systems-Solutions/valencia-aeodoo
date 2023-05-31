@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="inventory_log assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/inventory_log/static/src/js/main_screen.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/mat_borrow.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/warehouse_ops.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/validate_wh_ops.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/purchases.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/quick_info.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/inv_upd.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/end_screen.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/kanban_view_handler.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/date_range.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/picking_lines.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/move_line.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/select_barcode.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/multiple_validate_wh_ops.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/webcam.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/picking_picture.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/canvas.js"></script>
+            <script type="text/javascript" src="/inventory_log/static/src/js/type_selection.js"></script>
+            <link rel="stylesheet" type="text/scss" href="/inventory_log/static/src/scss/inventory_log.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/inventory_log/static/src/scss/validateWHOpsXML.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/inventory_log/static/src/scss/picking_picture.scss"/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="quality_check_line_form_view" model="ir.ui.view">
+        <field name="name">quality.check.line.form</field>
+        <field name="model">quality.check.line</field>
+        <field name="arch" type="xml">
+            <form>
+            <field name="failed_expiration" invisible="1"/>
+            <field name="correct_state_of_product" invisible="1"/>
+                <group>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" class="oe_inline"/></h1>
+                    </div>
+                </group>
+                <group>
+                    <field name="product_id"/>
+                    <field name="lot_id"/>
+                    <field name="validated_on_date"/>
+                    <field name="qty_done"/>
+                    <label for="correct_state_of_product"/>
+                    
+                    <div>
+                        <p attrs="{'invisible': [('correct_state_of_product', '=', False)]}"> Correct </p>
+                        <p attrs="{'invisible': [('correct_state_of_product', '=', True)]}"> Incorrect </p>
+                    </div>
+
+                    <label attrs="{'invisible':[('correct_state_of_product','=',True)]}" for="reason_state"/>
+                    <div>
+                        <field attrs="{'invisible':[('correct_state_of_product','=',True)]}" name="reason_state"/>
+                    </div>
+                    
+                    <br/><br/>
+                    <div attrs="{'invisible':[('failed_expiration','=',False)]}">
+                        <p>
+                            <b>Problem: Wrong expiration </b> <br/>
+                            <b attrs="{'invisible':[('overdue_days','=', 0 )]}"> 
+                                Fails quality control by <field name="overdue_days" class="oe_inline"/> days 
+                            </b>
+                            <b attrs="{'invisible':[('overdue_days','!=', 0 )]}">
+                                <field name="reason_failed_expiration" class="oe_inline"/>
+                            </b>
+                        </p>
+                    </div>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

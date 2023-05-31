@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="quality_check_form_view" model="ir.ui.view">
+        <field name="name">quality.check.form</field>
+        <field name="model">quality.check</field>
+        <field name="arch" type="xml">
+            <form string="Rounding Form">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" class="oe_inline"/></h1>
+                    </div>
+                    <group>
+                        <field name="state_of_the_van" invisible="1"/>
+                        <field name="temperature" invisible="1"/>
+                        <field name="reviewed" invisible="1"/>
+                        <group>
+                            <field name="create_date"/>
+                            <field name="picking_id"/>
+                            <field name="scheduled_date"/>
+                            <field name="date_done"/>
+                            <field name="quality_line_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="validated_on_date"/>
+                                </tree>
+                            </field>
+                            <field name="sent_mail"/>
+                            <label for="state_of_the_van"/>
+                            <div>
+                                <p attrs="{'invisible': [('state_of_the_van', '=', False)]}"> Correct </p>
+                                <p attrs="{'invisible': [('state_of_the_van', '=', True)]}"> Incorrect </p>
+                            </div>
+                            <label for="temperature"/>
+                            <div>
+                                <p attrs="{'invisible': [('temperature', '=', False)]}"> Correct, temperature was at <field name="deliver_temperature" class="oe_inline"/> (Cº)</p>
+                                <p attrs="{'invisible': [('temperature', '=', True)]}"> Incorrect, temperature was at <field name="deliver_temperature" class="oe_inline"/> (Cº)</p>
+                            </div>
+                            <field name="message"/>
+                        </group>
+                        <group>
+                            <field name="reviewed"/>
+                            <field name="review_note"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="quality_check_tree_view" model="ir.ui.view">
+        <field name="name">quality.check.tree</field>
+        <field name="model">quality.check</field>
+        <field name="arch" type="xml">
+            <tree string="Rounding Tree">
+                <field name="create_date"/>
+                <field name="name"/>
+                <field name="picking_id"/>
+                <field name="quality_line_ids" widget="many2many_tags"/>
+                <field name="sent_mail"/>
+                <field name="reviewed"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_quality_check_history" model="ir.actions.act_window">
+        <field name="name">Quality Check</field>
+        <field name="res_model">quality.check</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a quality check.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_quality_check" name="Quality Check" parent="stock.menu_warehouse_report" action="action_quality_check_history"/>
+</odoo>

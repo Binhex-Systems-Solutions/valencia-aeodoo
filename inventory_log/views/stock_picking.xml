@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_log" model="ir.ui.view">
+        <field name="name">stock.view.picking.form.log</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='extra']/group" position="inside">
+                <group>
+                    <field name="state_of_the_van"/>
+                    <field name="quality_msg" attrs="{'invisible': [('state_of_the_van', '!=', False)]}"/>
+                </group>
+            </xpath>
+            <!--<xpath expr="//field[@name='is_locked']" position="after">
+                <field name="expired" readonly="1" string="Caducado"/>
+            </xpath>
+            <xpath expr="//field[@name='move_line_ids_without_package']/tree" position="attributes">
+                <attribute name="decoration-bf">expired == True</attribute>
+                <attribute name="decoration-danger">expired == True</attribute>
+            </xpath>-->
+            <xpath expr="//page[@name='extra']" position="inside">
+                <group>
+                    <field name="image_ids" widget="many2many_binary"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_move_line_tree_log" model="ir.ui.view">
+        <field name="name">stock.view.move.line.tree.log</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="correct_state_of_product"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_kanban_view_inherit" model="ir.ui.view">
+     <field name="name">product.product.inherit</field>
+     <field name="model">product.product</field>
+     <field name="inherit_id" ref="inventory_log.product_kanban_view"/>
+     <field name="arch" type="xml">
+         <field name="standard_price" position="after">
+            <field name="product_tmpl_id"/>
+            <field name="uom_id"/>
+         </field>
+     </field>
+</record>
+</odoo>

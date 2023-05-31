@@ -1,0 +1,151 @@
+<odoo>
+    <data>
+        <record id="warehouse_kanban_view" model="ir.ui.view">
+            <field name="name">stock.warehouse.kanban</field>
+            <field name="model">stock.warehouse</field>
+            <field name="priority" eval="18"/>
+            <field name="arch" type="xml">
+                <kanban class="o_warehouse_kanban" create="false">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="lot_stock_id"/>     
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="code"/>
+                                    </strong>
+                                    <div>
+                                        <field name="name"/>
+                                    </div>
+                                    <div t-if="record.lot_stock_id">
+                                        <field name="lot_stock_id"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>  
+
+        <record id="warehouse_kanban_action" model="ir.actions.act_window">
+            <field name="name">Warehouse Kanban</field>
+            <field name="res_model">stock.warehouse</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="view_id" ref="warehouse_kanban_view"/>
+            <field name="target">fullscreen</field>
+        </record>     
+
+        <record id="lot_kanban_view" model="ir.ui.view">
+            <field name="name">lot.kanban</field>
+            <field name="model">stock.production.lot</field>
+            <field name="priority" eval="18"/>
+            <field name="arch" type="xml">
+                <kanban class="o_lot_kanban" create="true">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="expiration_date"/>     
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                    <div>
+                                        <field name="expiration_date"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>      
+        <record id="lot_kanban_action" model="ir.actions.act_window">
+            <field name="name">Lot</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="view_id" ref="lot_kanban_view"/>
+            <field name="target">fullscreen</field>
+            <field name="domain">domain</field>
+        </record> 
+
+        <record id="only_view_lot_view" model="ir.ui.view">
+            <field name="name">lot.kanban</field>
+            <field name="model">stock.production.lot</field>
+            <field name="priority" eval="18"/>
+            <field name="arch" type="xml">
+                <kanban class="o_lot_kanban" create="true">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="expiration_date"/>     
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                    <div>
+                                        <field name="expiration_date"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>   
+
+        <record id="only_view_lot_view2" model="ir.ui.view">
+            <field name="name">lot.kanban</field>
+            <field name="model">stock.production.lot</field>
+            <field name="priority" eval="18"/>
+            <field name="arch" type="xml">
+                <kanban class="o_lot_kanban2" create="true">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="expiration_date"/>     
+                    <field name="product_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                    <div>
+                                        <field name="expiration_date"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>  
+
+        <record id="only_view_lot_kanban_action" model="ir.actions.act_window">
+            <field name="name">Lot</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="view_id" ref="only_view_lot_view"/>
+            <field name="target">fullscreen</field>
+            <field name="domain">domain</field>
+        </record> 
+
+        <record id="only_view_lot_kanban_action2" model="ir.actions.act_window">
+            <field name="name">Lot</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="view_id" ref="only_view_lot_view2"/>
+            <field name="target">fullscreen</field>
+            <field name="domain">domain</field>
+        </record> 
+         
+    </data>
+</odoo>
