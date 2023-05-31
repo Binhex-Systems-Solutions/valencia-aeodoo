@@ -1,0 +1,1128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_es_vat_book_igic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20230418\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-08 09:07+0000\n"
+"PO-Revision-Date: 2023-05-08 10:09+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.3\n"
+"Last-Translator: \n"
+"Language: es\n"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_summary
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.ui.menu,name:l10n_es_vat_book_igic.menu_atc_vat_book_igic_map
+#, fuzzy
+msgid "ATC Book IGIC Map"
+msgstr "Libro ATC Mapa IGIC"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.actions.act_window,name:l10n_es_vat_book_igic.action_atc_vat_book_igic_mapping
+#, fuzzy
+msgid "ATC Vat Book IGIC Map"
+msgstr "Mapa IGIC del ATC Vat Book"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model,name:l10n_es_vat_book_igic.model_atc_vat_book_igic_map_line
+#, fuzzy
+msgid "ATC Vat Book Igic Map Line"
+msgstr "ATC Vat Book Igic Map Line"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.l10n_es_atc_vat_book_igic_map_lines_view_tree
+#, fuzzy
+msgid "ATC vat book igic map"
+msgstr "Mapa IGIC del libro de IGIC ATC"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_tax_summary.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__tax_id
+#, python-format
+msgid "Account Tax"
+msgstr "Cuenta de Impuestos"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__move_id
+#, fuzzy
+msgid "Account entry"
+msgstr "Entrada de cuenta"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Actividad  de Excepción"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono de tipo de actividad"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__allow_posting
+#, fuzzy
+msgid "Allow Posting"
+msgstr "Permitir publicación"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__move_id
+#, fuzzy
+msgid "Asiento contable"
+msgstr "Asiento contable"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nº de archivos adjuntos"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__auto_renumber
+#, fuzzy, python-format
+msgid "Auto renumber invoices received"
+msgstr "Renumeración automática de facturas recibidas"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.report_vat_book_igic_invoices_issued_document
+#, fuzzy
+msgid "BOOK REGISTER OF INVOICES ISSUED"
+msgstr "LIBRO REGISTRO DE FACTURAS EMITIDAS"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.report_vat_book_igic_invoices_received_document
+#, fuzzy
+msgid "BOOK REGISTER OF INVOICES RECEIVED"
+msgstr "LIBRO REGISTRO DE FACTURAS RECIBIDAS"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__partner_bank_id
+msgid "Bank account"
+msgstr "Cuenta Bancaria"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__base_amount
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__base_amount
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_invoices_head
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_taxes_head
+#, python-format
+msgid "Base"
+msgstr "Base"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_summary.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__base_amount
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__base_amount
+#, fuzzy, python-format
+msgid "Base amount"
+msgstr "Importe base"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/atc_vat_book_igic_map_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__fee_amount_xlsx_column
+#, fuzzy, python-format
+msgid "Base xlsx column"
+msgstr "Columna base xlsx"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/atc_vat_book_igic_map_line.py:0
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_summary.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__book_type
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__book_type
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__book_type
+#, fuzzy, python-format
+msgid "Book type"
+msgstr "Tipo de libro"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__calculation_date
+#, fuzzy
+msgid "Calculation Date"
+msgstr "Fecha de cálculo"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic_line
+#, fuzzy
+msgid "Canary VAT book line"
+msgstr "Línea de libros de IGIC canario"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic
+#, fuzzy
+msgid "Canary VAT book report"
+msgstr "Informe del libro IGIC canario"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic_summary
+#, fuzzy
+msgid "Canary VAT book summary"
+msgstr "Resumen del libro de IGIC canario"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic_line_tax
+#, fuzzy
+msgid "Canary VAT book tax line"
+msgstr "Línea fiscal canaria"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic_tax_summary
+#, fuzzy
+msgid "Canary VAT book tax summary"
+msgstr "Resumen del libro de IGIC canario"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.actions.act_window,help:l10n_es_vat_book_igic.l10n_es_vat_book_igic_action
+#, fuzzy
+msgid "Click to create a new Canary VAT book."
+msgstr "Haga clic para crear un nuevo libro de IGIC canario."
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__partner_bank_id
+#, fuzzy
+msgid "Company bank account used for the presentation"
+msgstr "Cuenta bancaria de la empresa utilizada para la presentación"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_dates
+msgid "Company:"
+msgstr "Empresa:"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__contact_email
+msgid "Contact email"
+msgstr "Email de contacto"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_contact
+#, fuzzy
+msgid "Contact phone:"
+msgstr "Teléfono de contacto:"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__counterpart_account_id
+#, fuzzy
+msgid "Counterpart account"
+msgstr "Cuenta de contrapartida"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__create_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__create_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__create_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__create_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__create_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__create_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__create_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__create_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__create_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__create_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_dates
+msgid "Date Range:"
+msgstr "Intervalo de fechas:"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__display_name
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__display_name
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__display_name
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__display_name
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__display_name
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__display_name
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_report_l10n_es_vat_book_igic_l10n_es_vat_book_igic_xlsx__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__partner_id
+#, python-format
+msgid "Empresa"
+msgstr "Company"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__date_end
+msgid "Ending date"
+msgstr "Fecha de finalización"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__entry_number
+#, python-format
+msgid "Entry number"
+msgstr "Número de entrada"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__error_count
+#, fuzzy
+msgid "Error Count"
+msgstr "Recuento de errores"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__exception_text
+#, fuzzy, python-format
+msgid "Exception text"
+msgstr "Texto de excepción"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy
+msgid "Export BOE"
+msgstr "BOE de exportación"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__export_config_id
+#, fuzzy
+msgid "Export config"
+msgstr "Exportar configuración"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy
+msgid "Export draft"
+msgstr "Exportar borrador"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__external_ref
+#, fuzzy, python-format
+msgid "External Reference"
+msgstr "Referencia externa"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_invoices_head
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_taxes_head
+msgid "Fee"
+msgstr "Cuota"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_dates
+#, fuzzy
+msgid "Fiscal Year:"
+msgstr "Ejercicio:"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__contact_name
+msgid "Full Name"
+msgstr "Nombre completo"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__id
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__id
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__id
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__id
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__id
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__id
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_report_l10n_es_vat_book_igic_l10n_es_vat_book_igic_xlsx__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.actions.act_window,name:l10n_es_vat_book_igic.l10n_es_vat_book_igic_action
+#, fuzzy
+msgid "IGIC Book"
+msgstr "Libro IGIC"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_line_tax__special_tax_group__irpf
+msgid "IRPF"
+msgstr "IRPF"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_needaction
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren tu atención."
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_has_error
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+"Si se encuentra seleccionado, algunos mensajes tienen error de envío."
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#, python-format
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__invoice_date
+#, python-format
+msgid "Invoice Date"
+msgstr "Fecha de la factura"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_invoices_head
+msgid "Issue Date"
+msgstr "Fecha de emisión"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__atc_vat_book_igic_map_line__book_type__issued
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_line__line_type__issued
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_summary__book_type__issued
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_tax_summary__book_type__issued
+#, python-format
+msgid "Issued"
+msgstr "Emitido"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.report_vat_book_igic_invoices_issued_document
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy
+msgid "Issued Invoices"
+msgstr "Facturas emitidas"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__rectification_issued_line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.report_vat_book_igic_invoices_issued_document
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy, python-format
+msgid "Issued Refund Invoices"
+msgstr "Facturas de reembolso emitidas"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__issued_summary_ids
+#, fuzzy, python-format
+msgid "Issued Summary"
+msgstr "Resumen publicado"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__issued_tax_summary_ids
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy, python-format
+msgid "Issued Tax Summary"
+msgstr "Resumen de impuestos emitido"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__issued_line_ids
+#, fuzzy, python-format
+msgid "Issued invoices"
+msgstr "Facturas emitidas"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_vat_book_igic_line_form
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_vat_book_igic_line_tree
+#, fuzzy, python-format
+msgid "Issued/Received invoices"
+msgstr "Facturas emitidas/recibidas"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#, python-format
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__journal_id
+#, fuzzy
+msgid "Journal in which post the move."
+msgstr "Diario en el que publicar la mudanza."
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__representative_vat
+#, fuzzy
+msgid "L.R. VAT number"
+msgstr "Número de IGIC L.R."
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line____last_update
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic____last_update
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line____last_update
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax____last_update
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary____last_update
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary____last_update
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_report_l10n_es_vat_book_igic_l10n_es_vat_book_igic_xlsx____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__write_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__write_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__write_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__write_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__write_uid
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__write_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__write_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__write_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__write_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__write_date
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__write_date
+msgid "Last Updated on"
+msgstr "Actualizado el"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__representative_vat
+#, fuzzy
+msgid "Legal Representative VAT number."
+msgstr "Número de IGIC de representante legal."
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.ui.menu,name:l10n_es_vat_book_igic.menu_vat_book_igic_report
+#, fuzzy
+msgid "Libro de IGIC"
+msgstr "Libro de IGIC"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__line_type
+#, fuzzy, python-format
+msgid "Line type"
+msgstr "Tipo de línea"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__number
+#, fuzzy
+msgid "Model number"
+msgstr "Número de modelo"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__move_line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_vat_book_igic_line_form
+#, python-format
+msgid "Move Lines"
+msgstr "Líneas de Movimientos"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__contact_name
+#, fuzzy
+msgid "Must have name and surname."
+msgstr "Debe tener nombre y apellidos."
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi fecha límite de actividad"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__vat_number
+#, python-format
+msgid "NIF"
+msgstr "NIF"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/atc_vat_book_igic_map_line.py:0
+#, python-format
+msgid "Name"
+msgstr "Nombre"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite de la siguiente actividad"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__name
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_invoices_head
+msgid "Number"
+msgstr "Número"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__partner_id
+msgid "Partner"
+msgstr "Socio"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_invoices_head
+msgid "Partner Name"
+msgstr "Nombre del Contacto"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__period_type
+msgid "Period type"
+msgstr "Tipo de período"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__contact_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__previous_number
+#, fuzzy
+msgid "Previous declaration number"
+msgstr "Número de declaración anterior"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_line_tax__special_tax_group__req
+#, fuzzy
+msgid "R.Eq."
+msgstr "R.Eq."
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__atc_vat_book_igic_map_line__book_type__received
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_line__line_type__received
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_summary__book_type__received
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_tax_summary__book_type__received
+#, python-format
+msgid "Received"
+msgstr "Recibido"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.report_vat_book_igic_invoices_received_document
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy
+msgid "Received Invoices"
+msgstr "Facturas recibidas"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__rectification_received_line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.report_vat_book_igic_invoices_received_document
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy, python-format
+msgid "Received Refund Invoices"
+msgstr "Facturas de reembolso recibidas"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__received_summary_ids
+#, fuzzy, python-format
+msgid "Received Summary"
+msgstr "Resumen recibido"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__received_tax_summary_ids
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy, python-format
+msgid "Received Tax Summary"
+msgstr "Resumen de impuestos recibidos"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__received_line_ids
+#, fuzzy, python-format
+msgid "Received invoices"
+msgstr "Facturas recibidas"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_line__line_type__rectification_issued
+#, fuzzy, python-format
+msgid "Rectification Issued"
+msgstr "Rectificación emitida"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields.selection,name:l10n_es_vat_book_igic.selection__l10n_es_vat_book_igic_line__line_type__rectification_received
+#, fuzzy, python-format
+msgid "Rectification Received"
+msgstr "Rectificación recibida"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#, python-format
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__ref
+msgid "Referencia"
+msgstr "Referencia"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__name
+#, fuzzy
+msgid "Report identifier"
+msgstr "Identificador de informe"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__summary_ids
+msgid "Resumen"
+msgstr "Resumen"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega del SMS"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__special_tax_id
+#, fuzzy, python-format
+msgid "Special Tax"
+msgstr "Impuesto Especial"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__special_tax_amount
+#, fuzzy, python-format
+msgid "Special Tax fee"
+msgstr "Tasa de impuesto especial"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/atc_vat_book_igic_map_line.py:0
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_summary.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__special_tax_group
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__special_tax_group
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__special_tax_group
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__special_tax_group
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__special_tax_group
+#, fuzzy, python-format
+msgid "Special group"
+msgstr "Grupo especial"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/atc_vat_book_igic_map_line.py:0
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__special_tax_group
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__special_tax_group
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__special_tax_group
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__special_tax_group
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__special_tax_group
+#, fuzzy, python-format
+msgid "Special tax group as R.Eq, IRPF, etc"
+msgstr "Grupo fiscal especial como R.Eq, IRPF, etc."
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__date_start
+msgid "Starting date"
+msgstr "Fecha de inicio"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__state
+msgid "State"
+msgstr "Estado"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__statement_type
+#, fuzzy
+msgid "Statement Type"
+msgstr "Tipo de instrucción"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.report_vat_book_igic_invoices_issued_document
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.report_vat_book_igic_invoices_received_document
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_vat_book_igic_summary_form
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_vat_book_igic_summary_tree
+#, python-format
+msgid "Summary"
+msgstr "Resumen"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__support_type
+msgid "Support Type"
+msgstr "Tipo Soporte"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_contact
+#, fuzzy
+msgid "Surnames and name contact:"
+msgstr "Apellidos y nombre de contacto:"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__tax_id
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_invoices_head
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_taxes_head
+#, python-format
+msgid "Tax"
+msgstr "Impuestos"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/atc_vat_book_igic_map_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__tax_account_id
+#, fuzzy, python-format
+msgid "Tax Account Restriction"
+msgstr "Restricción de la cuenta de impuestos"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__tax_line_ids
+#, fuzzy, python-format
+msgid "Tax Lines"
+msgstr "Líneas Tributarias"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__tax_rate
+#, python-format
+msgid "Tax Rate (%)"
+msgstr "Impuestos (%)"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__tax_summary_ids
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_vat_book_igic_tax_summary_form
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_vat_book_igic_tax_summary_tree
+#, fuzzy, python-format
+msgid "Tax Summary"
+msgstr "Resumen de impuestos"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_summary.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__tax_amount
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__tax_amount
+#, python-format
+msgid "Tax amount"
+msgstr "Impuestos en importe"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__tax_amount
+#, fuzzy, python-format
+msgid "Tax fee"
+msgstr "Tasa de impuestos"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/atc_vat_book_igic_map_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__tax_tmpl_ids
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_vat_book_igic_line_form
+#, python-format
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__counterpart_account_id
+#, fuzzy
+msgid ""
+"This account will be the counterpart for all the journal items that are "
+"regularized when posting the report."
+msgstr ""
+"Esta cuenta será la contrapartida de todos los artículos del diario que "
+"se regularicen al publicar el informe."
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#, fuzzy, python-format
+msgid "This book has warnings. Fix it before confirm"
+msgstr "Este libro tiene advertencias. Arreglarlo antes de confirmar"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#, fuzzy, python-format
+msgid "This partner doesn't have VAT"
+msgstr "Este socio no tiene IGIC"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__total_amount
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__total_amount
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_invoices_head
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_taxes_head
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_summary.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__total_amount
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__total_amount
+#, python-format
+msgid "Total amount"
+msgstr "Cantidad total"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__total_amount_special_include
+#, fuzzy, python-format
+msgid "Total w/Special"
+msgstr "Total con especial"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/atc_vat_book_igic_map_line.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line__fee_type_xlsx_column
+#, fuzzy, python-format
+msgid "Type xlsx column"
+msgstr "Escriba la columna xlsx"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Nº de mensajes sin leer"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_invoices_head
+#, fuzzy
+msgid "VAT"
+msgstr "NIF:"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.actions.report,name:l10n_es_vat_book_igic.l10n_es_vat_book_igic_xlsx
+#, fuzzy
+msgid "VAT book IGIC XLSX report"
+msgstr "Libro de IGIC Informe IGIC XLSX"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__company_vat
+msgid "VAT number"
+msgstr "Número de CIF"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_contact
+msgid "VAT:"
+msgstr "NIF:"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__vat_book_line_id
+#, fuzzy
+msgid "Vat Book Line"
+msgstr "Línea de libros de IGIC"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_summary.py:0
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line__vat_book_id
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_summary__vat_book_id
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__vat_book_id
+#, fuzzy, python-format
+msgid "Vat Book id"
+msgstr "Identificación del libro de IGIC"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model,name:l10n_es_vat_book_igic.model_report_l10n_es_vat_book_igic_l10n_es_vat_book_igic_xlsx
+#, fuzzy
+msgid "Vat Number Xlsx"
+msgstr "Número de IGIC Xlsx"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.actions.report,name:l10n_es_vat_book_igic.act_report_vat_book_igic_invoices_issued_html
+#: model:ir.actions.report,name:l10n_es_vat_book_igic.act_report_vat_book_igic_invoices_issued_pdf
+#, fuzzy
+msgid "Vat book invoices issued"
+msgstr "Facturas de libro de IGIC emitidas"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.actions.report,name:l10n_es_vat_book_igic.act_report_vat_book_igic_invoices_received_html
+#: model:ir.actions.report,name:l10n_es_vat_book_igic.act_report_vat_book_igic_invoices_received_pdf
+#, fuzzy
+msgid "Vat book invoices received"
+msgstr "Facturas del libro de IGIC recibidas"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy
+msgid "View Issued Invoices"
+msgstr "Ver facturas emitidas"
+
+#. module: l10n_es_vat_book_igic
+#: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
+#, fuzzy
+msgid "View Received Invoices"
+msgstr "Ver facturas recibidas"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#, fuzzy, python-format
+msgid "Without Partner"
+msgstr "Sin pareja"
+
+#. module: l10n_es_vat_book_igic
+#: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
+#, python-format
+msgid "Without VAT"
+msgstr "Sin IGIC"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__year
+msgid "Year"
+msgstr "Año"
+
+#. module: l10n_es_vat_book_igic
+#: model:ir.actions.report,print_report_name:l10n_es_vat_book_igic.l10n_es_vat_book_igic_xlsx
+#, fuzzy
+msgid "object.get_report_file_name()"
+msgstr "object.get_report_file_name()"

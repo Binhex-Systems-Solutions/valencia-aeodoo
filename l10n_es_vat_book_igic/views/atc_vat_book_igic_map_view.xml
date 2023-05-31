@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_atc_vat_book_igic_mapping">
+        <field name="name">ATC Vat Book IGIC Map</field>
+        <field name="res_model">atc.vat.book.igic.map.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="menu_atc_vat_book_igic_map"
+        parent="l10n_es_atc.menu_l10n_es_atc_config"
+        action="action_atc_vat_book_igic_mapping"
+        name="ATC Book IGIC Map"
+    />
+    <record id="l10n_es_atc_vat_book_igic_map_lines_view_tree" model="ir.ui.view">
+        <field name="name">atc.vat.book.igic.map.lines.view.tree</field>
+        <field name="model">atc.vat.book.igic.map.line</field>
+        <field name="arch" type="xml">
+            <tree string="ATC vat book igic map" editable="bottom">
+                <field name="name" />
+                <field name="book_type" />
+                <field name="special_tax_group" />
+                <field name="fee_type_xlsx_column" />
+                <field name="fee_amount_xlsx_column" />
+                <field name="tax_tmpl_ids" widget="many2many_tags" />
+                <field name="tax_account_id" />
+            </tree>
+        </field>
+    </record>
+</odoo>
