@@ -10,6 +10,18 @@
             <field name="country_id" ref="base.es"/>
         </record>
 
+        <record id="fp_nacional_canary_ns" model="account.fiscal.position.template">
+            <field name="sequence">1</field>
+            <field name="name">Régimen Nacional No sujeto</field>
+            <field name="chart_template_id" ref="account_chart_template_common_canary"/>
+            <field name="auto_apply" eval="True"/>
+            <field name="vat_required" eval="True"/>
+            <field name="country_id" ref="base.es"/>
+            <field name="note">
+                Se aplica a clientes en régimen de IVA cuando la compañía tiene régimen de IGIC (Islas Canarias)
+            </field>
+        </record>
+
         <record id="fp_extra_canary" model="account.fiscal.position.template">
             <field name="sequence">4</field>
             <field name="name">Régimen Extracomunitario Islas Canarias</field>
@@ -55,22 +67,22 @@
 
         <!-- Regímenes Especiales -->
         <record id="fp_rebu_canary" model="account.fiscal.position.template">
-            <field name="name">Régimen especial de bienes usados</field>
+            <field name="name">Régimen especial de bienes usados Islas Canarias</field>
             <field name="chart_template_id" ref="account_chart_template_common_canary"/>
         </record>
 
         <record id="fp_reaooa_canary" model="account.fiscal.position.template">
-            <field name="name">Régimen especial de objetos de arte, antigüedades y objetos de colección</field>
+            <field name="name">Régimen especial de objetos de arte, antigüedades y objetos de colección Islas Canarias</field>
             <field name="chart_template_id" ref="account_chart_template_common_canary"/>
         </record>
 
         <record id="fp_recc_canary" model="account.fiscal.position.template">
-            <field name="name">Régimen especial de criterio de caja</field>
+            <field name="name">Régimen especial de criterio de caja Islas Canarias</field>
             <field name="chart_template_id" ref="account_chart_template_common_canary"/>
         </record>
 
         <record id="fp_reav_canary" model="account.fiscal.position.template">
-            <field name="name">Régimen especial de agencias de viaje</field>
+            <field name="name">Régimen especial de agencias de viaje Islas Canarias</field>
             <field name="chart_template_id" ref="account_chart_template_common_canary"/>
         </record>
 
@@ -1065,5 +1077,188 @@
             <field name="tax_dest_id" ref="account_tax_template_igic_cmino"/>
         </record>
 
+
+        <!-- Régimen Nacional Península -->
+
+        <record id="fptt_ns_p_igic0_inv" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_0_inv"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic0" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_0"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic3_inv" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_3_inv"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic3" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_3"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic7_inv" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_7_inv"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic7" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_7"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic95_inv" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_9_5_inv"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic95" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_9_5"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic15_inv" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_15_inv"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic15" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_15"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic20_inv" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_20_inv"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_p_igic20" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_20"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_s_igic0" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_0"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_s_igic3" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_3"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_s_igic7" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_7"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_s_igic95" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_9_5"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_s_igic15" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_15"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_ns"/>
+        </record>
+
+        <record id="fptt_ns_s_igic20" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_nacional_canary_ns"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_20"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_ns"/>
+        </record>
+
+        <!-- Régimen especial de agencias de viaje Islas Canarias -->
+        <record id="fptt_reav_canaryp_igic0" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_0"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canaryp_igic3" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_3"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canaryp_igic7" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_7"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canaryp_igic95" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_9_5"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canaryp_igic15" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_15"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canaryp_igic20" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_sop_20"/>
+            <field name="tax_dest_id" ref="account_tax_template_p_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canarys_igic0" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_0"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canarys_igic3" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_3"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canarys_igic7" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_7"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canarys_igic95" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_9_5"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canarys_igic15" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_15"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_reav"/>
+        </record>
+
+        <record id="fptt_reav_canarys_igic20" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="fp_reav_canary"/>
+            <field name="tax_src_id" ref="account_tax_template_igic_r_20"/>
+            <field name="tax_dest_id" ref="account_tax_template_s_igic_reav"/>
+        </record>
     </data>
 </odoo>

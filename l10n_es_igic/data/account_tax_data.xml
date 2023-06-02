@@ -331,6 +331,81 @@
         ]"/>
     </record>
 
+    <!-- No Sujeto (Regimen Nacional Península -->
+    <record id="account_tax_template_s_igic_ns" model="account.tax.template">
+        <field name="type_tax_use">sale</field>
+        <field name="name">IGIC No sujeto Repercutido</field>
+        <field name="chart_template_id" ref="account_chart_template_common_canary"/>
+        <field name="amount" eval="0"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_0"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+    </record>
+
+    <!-- Régimen especial de agencias de viaje Islas Canarias -->
+    <record id="account_tax_template_s_igic_reav" model="account.tax.template">
+        <field name="chart_template_id" ref="account_chart_template_common_canary" />
+        <field name="description">S_REAV</field>
+        <field name="name">IGIC Repercutido incluido REAV</field>
+        <field eval="0.00" name="amount" />
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_group_id" ref="tax_group_igic_reav" />
+        <field
+            name="invoice_repartition_line_ids"
+            eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+
+        ]"
+        />
+        <field
+            name="refund_repartition_line_ids"
+            eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"
+        />
+    </record>
+
+    
+
     <!-- ======================== -->
     <!-- IGIC SOPORTADO (COMPRAS) -->
     <!-- ======================== -->
@@ -1625,6 +1700,79 @@
                 'account_id': ref('l10n_es_igic.account_common_canary_4727'),
             }),
         ]"/>
+    </record>
+
+    <!-- No Sujeto (Regimen Nacional Península -->
+    <record id="account_tax_template_p_igic_ns" model="account.tax.template">
+        <field name="type_tax_use">purchase</field>
+        <field name="name">IGIC Soportado no sujeto </field>
+        <field name="chart_template_id" ref="account_chart_template_common_canary"/>
+        <field name="amount" eval="0"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_0"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+    </record>
+
+    <!-- Régimen especial de agencias de viaje Islas Canarias -->
+    <record id="account_tax_template_p_igic_reav" model="account.tax.template">
+        <field name="chart_template_id" ref="account_chart_template_common_canary" />
+        <field name="description">P_REAV</field>
+        <field name="name">IGIC Soportado no deducible REAV</field>
+        <field eval="0.00" name="amount" />
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_group_id" ref="tax_group_igic_reav" />
+        <field
+            name="invoice_repartition_line_ids"
+            eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+
+        ]"
+        />
+        <field
+            name="refund_repartition_line_ids"
+            eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"
+        />
     </record>
 
 </odoo>

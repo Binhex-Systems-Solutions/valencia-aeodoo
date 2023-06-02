@@ -4,7 +4,7 @@
 
 {
     "name": "IGIC Canary Islands",
-    "version": "14.0.2.0.0",
+    "version": "14.0.3.0.0",
     "author": "Binhex System Solutions, Odoo Community Association (OCA)",
     "category": "Accounting",
     "website": "https://github.com/OCA/l10n-spain",
