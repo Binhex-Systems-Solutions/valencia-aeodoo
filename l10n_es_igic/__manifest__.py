@@ -4,11 +4,10 @@
 
 {
     "name": "IGIC Canary Islands",
-    "version": "14.0.3.0.0",
-    "author": "Binhex System Solutions, Odoo Community Association (OCA)",
-    "category": "Accounting",
+    "version": "15.0.3.0.0",
+    "author": "Spanish Localization Team",
+    "category": "Accounting/Localizations/Account Charts",
     "website": "https://github.com/OCA/l10n-spain",
-    "license": "AGPL-3",
     "depends": [
         "l10n_es",
     ],
@@ -23,7 +22,7 @@
         "data/account_fiscal_position_template_canary_data.xml",
     ],
     "demo": [
-        # "demo/demo_company.xml",
+        "demo/demo_company.xml",
     ],
     "installable": True,
 }

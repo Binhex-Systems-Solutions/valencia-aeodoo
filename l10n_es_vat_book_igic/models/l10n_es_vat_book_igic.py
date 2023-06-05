@@ -15,7 +15,7 @@ from odoo.exceptions import UserError
 from odoo.tools import ormcache
 
 
-class L10nEsVatBookIgic(models.Model):
+class L10nEsVatBook(models.Model):
     _name = "l10n.es.vat.book.igic"
     _description = "Canary VAT book report"
     _inherit = "l10n.es.aeat.report"

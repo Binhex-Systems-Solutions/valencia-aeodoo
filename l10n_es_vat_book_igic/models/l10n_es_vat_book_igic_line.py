@@ -9,7 +9,7 @@
 from odoo import api, fields, models, _
 
 
-class L10nEsVatBookIgicLine(models.Model):
+class L10nEsVatBookLine(models.Model):
     _name = "l10n.es.vat.book.igic.line"
     _description = "Canary VAT book line"
     _order = "exception_text asc, entry_number asc, invoice_date asc, ref asc"

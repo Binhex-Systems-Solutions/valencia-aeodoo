@@ -9,7 +9,7 @@
 from odoo import fields, models, _
 
 
-class L10nEsVatBookIgicIssuedSummary(models.Model):
+class L10nEsVatBookIssuedSummary(models.Model):
     _name = "l10n.es.vat.book.igic.summary"
     _description = "Canary VAT book summary"
     _order = "book_type, special_tax_group DESC"

@@ -12,7 +12,7 @@
 # Basado en l10n_es_vat_book
 {
     "name": "Libro de IGIC",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "author": "Binhex System Solutions, PRAXYA, ForgeFlow, Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-spain",
     "license": "AGPL-3",

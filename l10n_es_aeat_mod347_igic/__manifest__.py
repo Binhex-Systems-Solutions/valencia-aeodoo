@@ -8,7 +8,7 @@
 
 {
     "name": "AEAT modelo 347 IGIC",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "author": "Binhex System Solutions",
     "website": "https://github.com/OCA/l10n-spain",
     "category": "Accounting",

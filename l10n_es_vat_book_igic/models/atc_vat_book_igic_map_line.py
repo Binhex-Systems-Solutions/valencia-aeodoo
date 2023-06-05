@@ -6,7 +6,7 @@
 from odoo import fields, models, _
 
 
-class AtcVatBookIgicMapLines(models.Model):
+class AtcVatBookMapLines(models.Model):
     _name = "atc.vat.book.igic.map.line"
     _description = "ATC Vat Book Igic Map Line"
 

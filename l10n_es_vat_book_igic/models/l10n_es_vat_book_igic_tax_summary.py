@@ -9,7 +9,7 @@
 from odoo import fields, models, _
 
 
-class L10nEsVatBookIgicIssuedTaxSummary(models.Model):
+class L10nEsVatBookIssuedTaxSummary(models.Model):
     _name = "l10n.es.vat.book.igic.tax.summary"
     _description = "Canary VAT book tax summary"
     _inherit = "l10n.es.vat.book.igic.summary"

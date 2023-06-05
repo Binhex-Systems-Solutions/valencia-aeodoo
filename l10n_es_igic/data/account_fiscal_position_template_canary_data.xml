@@ -11,7 +11,7 @@
         </record>
 
         <record id="fp_nacional_canary_ns" model="account.fiscal.position.template">
-            <field name="sequence">1</field>
+            <field name="sequence">2</field>
             <field name="name">Régimen Nacional No sujeto</field>
             <field name="chart_template_id" ref="account_chart_template_common_canary"/>
             <field name="auto_apply" eval="True"/>
