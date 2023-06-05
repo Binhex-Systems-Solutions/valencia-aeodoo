@@ -1,14 +1,9 @@
-##############################################################################
-#
-# Copyright (c) 2023 Binhex System Solutions
-# Copyright (c) 2023 Nicolás Ramos (http://binhex.es)
-#
-# The licence is in the file __manifest__.py
-##############################################################################
+# Copyright 2014-2022 Nicolás Ramos (http://binhex.es)
+# Copyright 2023 Binhex System Solutions
 
 {
     "name": "AEAT modelo 347 IGIC",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Binhex System Solutions",
     "website": "https://github.com/OCA/l10n-spain",
     "category": "Accounting",

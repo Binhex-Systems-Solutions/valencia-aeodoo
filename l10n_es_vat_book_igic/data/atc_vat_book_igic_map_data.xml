@@ -68,7 +68,7 @@
     </record>
     
     <record id="atc_vat_book_igic_map_line_p_req" model="atc.vat.book.igic.map.line">
-        <field name="name">Recargo Eq..</field>
+        <field name="name">Recargo Eq.</field>
         <field name="book_type">received</field>
         <field name="special_tax_group">req</field>
         <field name="fee_type_xlsx_column">R</field>

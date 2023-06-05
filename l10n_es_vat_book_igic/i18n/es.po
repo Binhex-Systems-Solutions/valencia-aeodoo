@@ -44,7 +44,7 @@ msgstr "ATC Vat Book Igic Map Line"
 #: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.l10n_es_atc_vat_book_igic_map_lines_view_tree
 #, fuzzy
 msgid "ATC vat book igic map"
-msgstr "Mapa IGIC del libro de IGIC ATC"
+msgstr "Mapa IGIC del libro de IVA ATC"
 
 #. module: l10n_es_vat_book_igic
 #: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_tax_summary.py:0
@@ -170,19 +170,19 @@ msgstr "Fecha de cálculo"
 #: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic_line
 #, fuzzy
 msgid "Canary VAT book line"
-msgstr "Línea de libros de IGIC canario"
+msgstr "Línea de libros de IVA canario"
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic
 #, fuzzy
 msgid "Canary VAT book report"
-msgstr "Informe del libro IGIC canario"
+msgstr "Informe del libro IVA canario"
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic_summary
 #, fuzzy
 msgid "Canary VAT book summary"
-msgstr "Resumen del libro de IGIC canario"
+msgstr "Resumen del libro de IVA canario"
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic_line_tax
@@ -194,13 +194,13 @@ msgstr "Línea fiscal canaria"
 #: model:ir.model,name:l10n_es_vat_book_igic.model_l10n_es_vat_book_igic_tax_summary
 #, fuzzy
 msgid "Canary VAT book tax summary"
-msgstr "Resumen del libro de IGIC canario"
+msgstr "Resumen del libro de IVA canario"
 
 #. module: l10n_es_vat_book_igic
 #: model_terms:ir.actions.act_window,help:l10n_es_vat_book_igic.l10n_es_vat_book_igic_action
 #, fuzzy
 msgid "Click to create a new Canary VAT book."
-msgstr "Haga clic para crear un nuevo libro de IGIC canario."
+msgstr "Haga clic para crear un nuevo libro de IVA canario."
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__company_id
@@ -516,7 +516,7 @@ msgstr "Diario en el que publicar la mudanza."
 #: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__representative_vat
 #, fuzzy
 msgid "L.R. VAT number"
-msgstr "Número de IGIC L.R."
+msgstr "Número de IVA L.R."
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_atc_vat_book_igic_map_line____last_update
@@ -553,7 +553,7 @@ msgstr "Actualizado el"
 #: model:ir.model.fields,help:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__representative_vat
 #, fuzzy
 msgid "Legal Representative VAT number."
-msgstr "Número de IGIC de representante legal."
+msgstr "Número de IVA de representante legal."
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.ui.menu,name:l10n_es_vat_book_igic.menu_vat_book_igic_report
@@ -974,7 +974,7 @@ msgstr "Este libro tiene advertencias. Arreglarlo antes de confirmar"
 #: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
 #, fuzzy, python-format
 msgid "This partner doesn't have VAT"
-msgstr "Este socio no tiene IGIC"
+msgstr "Este socio no tiene IVA"
 
 #. module: l10n_es_vat_book_igic
 #: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line_tax.py:0
@@ -1034,12 +1034,12 @@ msgstr "NIF:"
 #: model:ir.actions.report,name:l10n_es_vat_book_igic.l10n_es_vat_book_igic_xlsx
 #, fuzzy
 msgid "VAT book IGIC XLSX report"
-msgstr "Libro de IGIC Informe IGIC XLSX"
+msgstr "Libro de IVA Informe IGIC XLSX"
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__company_vat
 msgid "VAT number"
-msgstr "Número de CIF"
+msgstr "Número de IVA"
 
 #. module: l10n_es_vat_book_igic
 #: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.vat_book_contact
@@ -1050,7 +1050,7 @@ msgstr "NIF:"
 #: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_line_tax__vat_book_line_id
 #, fuzzy
 msgid "Vat Book Line"
-msgstr "Línea de libros de IGIC"
+msgstr "Línea de libros de IVA"
 
 #. module: l10n_es_vat_book_igic
 #: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic_line.py:0
@@ -1060,27 +1060,27 @@ msgstr "Línea de libros de IGIC"
 #: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic_tax_summary__vat_book_id
 #, fuzzy, python-format
 msgid "Vat Book id"
-msgstr "Identificación del libro de IGIC"
+msgstr "Identificación del libro de IVA"
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.model,name:l10n_es_vat_book_igic.model_report_l10n_es_vat_book_igic_l10n_es_vat_book_igic_xlsx
 #, fuzzy
 msgid "Vat Number Xlsx"
-msgstr "Número de IGIC Xlsx"
+msgstr "Número de IVA Xlsx"
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.actions.report,name:l10n_es_vat_book_igic.act_report_vat_book_igic_invoices_issued_html
 #: model:ir.actions.report,name:l10n_es_vat_book_igic.act_report_vat_book_igic_invoices_issued_pdf
 #, fuzzy
 msgid "Vat book invoices issued"
-msgstr "Facturas de libro de IGIC emitidas"
+msgstr "Facturas de libro de IVA emitidas"
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.actions.report,name:l10n_es_vat_book_igic.act_report_vat_book_igic_invoices_received_html
 #: model:ir.actions.report,name:l10n_es_vat_book_igic.act_report_vat_book_igic_invoices_received_pdf
 #, fuzzy
 msgid "Vat book invoices received"
-msgstr "Facturas del libro de IGIC recibidas"
+msgstr "Facturas del libro de IVA recibidas"
 
 #. module: l10n_es_vat_book_igic
 #: model_terms:ir.ui.view,arch_db:l10n_es_vat_book_igic.view_l10n_es_vat_book_igic_form
@@ -1114,7 +1114,7 @@ msgstr "Sin pareja"
 #: code:addons/l10n_es_vat_book_igic/models/l10n_es_vat_book_igic.py:0
 #, python-format
 msgid "Without VAT"
-msgstr "Sin IGIC"
+msgstr "Sin IVA"
 
 #. module: l10n_es_vat_book_igic
 #: model:ir.model.fields,field_description:l10n_es_vat_book_igic.field_l10n_es_vat_book_igic__year

@@ -9,7 +9,7 @@
 {
     "name": "ATC Menú",
     "summary": "Modulo base para menú de la ATC",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Binhex System Solutions",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/l10n-spain",
