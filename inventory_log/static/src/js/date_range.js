@@ -144,7 +144,6 @@ odoo.define('inventory_log.date_range', function (require) {
                 self.zones = warehouse[1];
                 Session.warehouse = warehouse[0][0].id;
                 self.company = warehouse[2];
-                console.log("Company ", self.company)
                 self.$el.html( QWeb.render("DateRange", {warehouse: self.warehouse, date: date,zones: self.zones, filter: filter,selected:selected, company:self.company,  options: Session.company_settings}));
 
             });

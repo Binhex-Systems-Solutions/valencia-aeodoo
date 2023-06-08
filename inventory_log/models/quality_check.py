@@ -41,13 +41,7 @@ class QualityCheck(models.Model):
     review_note = fields.Text(_("Review Note"))
     scheduled_date = fields.Datetime(related='picking_id.scheduled_date', string=_('Picking scheduled date'))
     date_done = fields.Datetime(related='picking_id.date_done',  string=_('Picking date of Transfer'))
-
-    '''
-    Zonas horarias de pytz desactualizadas
-    '''
-    one_hour_less_tz = ['Africa/Juba', 'America/Campo_Grande', 'America/Cuiaba', 'Pacific/Fiji', 'America/Sao_Paulo', 'Brazil/East', 'Europe/Volgograd']
-    one_hour_more_tz = ['America/Dawson', 'America/Whitehorse', 'Canada/Yukon', 'Pacific/Norfolk']
-    three_hours_more_tz = ['Antarctica/Casey']
+   
 
     def send_mail_template_quality(self, logged_user_id):
         logged_user = self.env['res.users'].browse(logged_user_id)
@@ -55,7 +49,7 @@ class QualityCheck(models.Model):
         if user.notification_type == 'inbox':
             self.inbox_message(user, logged_user)
         else:
-            datetime_now = self.get_datetime_of_user_tz(user)
+            datetime_now = datetime.now()
             email_to = self.env.user.company_id.quality_responsable_user_id.email_formatted
             try:
                 template_id = self.env['ir.model.data'].get_object_reference('inventory_log', 'quality_not_checked_email_template_v1_2')[1]
@@ -64,38 +58,6 @@ class QualityCheck(models.Model):
                 return
             self.sent_mail = True
             self.env['mail.template'].browse(template_id).with_context(email_values).send_mail(self.id, force_send=True,email_values={'email_to': email_to})
-
-    def get_datetime_of_user_tz(self, user):
-        tz = pytz.timezone(user.tz)
-        date_now = datetime.now(tz)
-
-        fix = 0
-        if tz in self.one_hour_less_tz:
-            fix = -1
-        elif tz in self.one_hour_more_tz:
-            fix = 1
-        elif tz in self.three_hours_more_tz:
-            fix = 3
-
-        hour_diff = int(date_now.strftime('%H')) + fix
-        
-        if hour_diff >= 0 and hour_diff <= 9:
-            hour_diff = '+0' + str(hour_diff)
-        elif hour_diff <= 0 and hour_diff >= -9:
-            hour_diff = '-0' + str(hour_diff)[1]
-        elif hour_diff >= 10:
-            hour_diff = '+' + str(hour_diff)
-
-        date = date_now.strftime('%Y:%m:%d')
-        year = date[0:4]
-        month = date[5:7]
-        day = date[8:10]
-
-        time = date_now.strftime('%H:%M')
-        hour = time[0:2]
-        minute = time[3:5]
-
-        return str(hour + ':' + minute + ' ' + day + '/' + month + '/' + year)
 
     '''
     def action_send_notification(self):

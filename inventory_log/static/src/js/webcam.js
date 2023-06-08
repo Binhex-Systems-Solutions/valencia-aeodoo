@@ -623,8 +623,6 @@ var Webcam = {
 				break;
 
 			default:
-				// catch-all event, just in case
-				// console.log("webcam flash_notify: " + type + ": " + msg);
 				break;
 		}
 	},

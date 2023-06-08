@@ -15,9 +15,7 @@ odoo.define('inventory_log.picking_picture', function (require) {
             "click .back": function() {
                 var self = this;
                 Session.lot_id = undefined;
-                console.log("Back picking ",Session.picking)
                 if (Session.picking) {
-                    console.log("Back from picture")
                     self.do_action({
                         type: 'ir.actions.client',
                         name: _t('Validate Picking'),
@@ -92,14 +90,12 @@ odoo.define('inventory_log.picking_picture', function (require) {
             this._super();
             var self = this;
             let pic;
-            //console.log('picture', Session)
             if (Session.picking)
                 self._rpc({
                     model: 'stock.picking',
                     method: 'get_images_info',
                     args: [[Session.picking.id]],
                 }).then(function(picking) {
-                    console.log('get_images_info', picking)
                     if (!Session.take_pic && picking && picking.image_ids != {}) {
                         for (const key in picking.image_ids) {
                             picking.image_ids[key] = 'data:image/png;base64,' + picking.image_ids[key]

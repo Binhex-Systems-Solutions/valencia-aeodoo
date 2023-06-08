@@ -1,0 +1,2426 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* inventory_log
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20220420\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-08 10:32+0000\n"
+"PO-Revision-Date: 2023-06-08 17:37+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.3.1\n"
+
+#. module: inventory_log
+#: model:mail.template,body_html:inventory_log.scrap_created_email_template_v1_0
+msgid ""
+"\n"
+"                <div style=\"line-height: 1.6;\">\n"
+"                    <pre style=\"font-weight: bold;font-size: 16px;\">${ctx."
+"get('scrap_lines')}</pre>\n"
+"                 </div>\n"
+"            "
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_inventory.py:0
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid " at "
+msgstr " en "
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid " to "
+msgstr " hasta "
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "%s: current (%s)/ asked (%s)<br/>"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "%s<br/>"
+msgstr ""
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_form_view
+msgid "(Cº)"
+msgstr ""
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_line_form_view
+msgid "<b>Problem: Wrong expiration </b> <br/>"
+msgstr "<b>Problema: Caducidad incorrecta </b> <br/>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#, python-format
+msgid "<button id='clear' class='btn btn-primary'>Clear</button><br/>"
+msgstr "<button id='clear' class='btn btn-primary'>Limpiar</button><br/>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "<button id='finish' class='btn btn-success'>Confirm</button><br/>"
+msgstr "<button id='finish' class='btn btn-success'>Confirmar</button><br/>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#, python-format
+msgid ""
+"<canvas id='myCanvas' class='o_signature_canvas'> Canvas not supported</"
+"canvas>"
+msgstr ""
+"<canvas id='myCanvas' class='o_signature_canvas'> Canvas no soportado</"
+"canvas>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#, python-format
+msgid ""
+"<div class='row mb-2'><button class='btn btn-info c_loc_ware offset-2 "
+"col-8'>Create Location/Warehouse</button></div>"
+msgstr ""
+"<div class='row mb-2'><button class='btn btn-info c_loc_ware offset-2 "
+"col-8'>Crear localización/Almacén</button></div>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#, python-format
+msgid ""
+"<div class='row mb-2'><button class='btn btn-info c_product offset-2 "
+"col-8'>Create Product</button></div>"
+msgstr ""
+"<div class='row mb-2'><button class='btn btn-info c_product offset-2 "
+"col-8'>Crear productos</button></div>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#, python-format
+msgid ""
+"<div class='row mb-2'><button class='btn btn-info c_supplier offset-2 "
+"col-8'>Create Supplier</button></div>"
+msgstr ""
+"<div class='row mb-2'><button class='btn btn-info c_supplier offset-2 "
+"col-8'>Crear proveedor</button></div>"
+
+#. module: inventory_log
+#: model:mail.template,body_html:inventory_log.inventory_created_email_template_v1_3
+msgid ""
+"<div style=\"line-height: 1.6;\">\n"
+"                    <span>A new inventory adjustement was made by ${ctx."
+"get('user')} at ${ctx.get('datetime')} :</span>\n"
+"                    % for line in object.line_ids:\n"
+"                            <ul>\n"
+"                                <li><span style=\"font-weight: bolder;"
+"\">Product: </span> ${line.product_id.name}</li>\n"
+"                                <ul>\n"
+"                                    % if line.product_id.tracking != "
+"'none':\n"
+"                                        <li><span style=\"font-weight: "
+"bolder;\">Lot: </span> ${line.prod_lot_id.name}</li>\n"
+"                                    % endif\n"
+"                                    <li><span style=\"font-weight: bolder;"
+"\">Qty: </span> ${line.product_qty}</li> \n"
+"                                </ul>\n"
+"                            </ul>\n"
+"                    % endfor\n"
+"                    <ul>\n"
+"                        <li><span style=\"font-weight: bolder;\">Motive: </"
+"span> ${ctx.get('inv_upd_motive')}</li>\n"
+"                    </ul>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"line-height: 1.6;\">\n"
+"                    <span>Nuevo ajuste de inventario realizado por ${ctx."
+"get('user')} at ${ctx.get('datetime')} :</span>\n"
+"                    % for line in object.line_ids:\n"
+"                            <ul>\n"
+"                                <li><span style=\"font-weight: bolder;"
+"\">Producto: </span> ${line.product_id.name}</li>\n"
+"                                <ul>\n"
+"                                    % if line.product_id.tracking != "
+"'none':\n"
+"                                        <li><span style=\"font-weight: "
+"bolder;\">Lote: </span> ${line.prod_lot_id.name}</li>\n"
+"                                    % endif\n"
+"                                    <li><span style=\"font-weight: bolder;"
+"\">Cantidad: </span> ${line.product_qty}</li> \n"
+"                                </ul>\n"
+"                            </ul>\n"
+"                    % endfor\n"
+"                    <ul>\n"
+"                        <li><span style=\"font-weight: bolder;\">Motivo: </"
+"span> ${ctx.get('inv_upd_motive')}</li>\n"
+"                    </ul>\n"
+"                </div>\n"
+"            "
+
+#. module: inventory_log
+#: model:mail.template,body_html:inventory_log.quality_not_checked_email_template_v1_2
+msgid ""
+"<div style=\"line-height: 1.6;\">\n"
+"                    <span>It has been detected that the following picking "
+"validated by ${ctx.get('user')} does not pass the quality control at ${ctx."
+"get('datetime')}.</span>\n"
+"                    <li><span style=\"font-weight: bolder;\">Picking: </"
+"span> ${object.picking_id.name}</li>\n"
+"                    <li><span style=\"font-weight: bolder;\">Affected move "
+"lines: </span>\n"
+"                    <ul>\n"
+"                    % for line in object.quality_line_ids:\n"
+"                        <li> \n"
+"                            <span>${line.product_id.name}</span>\n"
+"                        </li>\n"
+"                        <ul>\n"
+"                        <li>\n"
+"                            <span style=\"font-weight: bolder;\">Lot: </"
+"span>\n"
+"                            ${line.lot_id.name}\n"
+"                        </li>\n"
+"                        <li>\n"
+"                            <span style=\"font-weight: bolder;\">Qty: </"
+"span>\n"
+"                            ${line.qty_done}\n"
+"                        </li>\n"
+"                        % if line.failed_expiration:\n"
+"                            <li>\n"
+"                                <span style=\"font-weight: bolder;\">Wrong "
+"expiration</span>\n"
+"                            </li>\n"
+"                        % endif\n"
+"                        % if not line.correct_state_of_product:\n"
+"                            <li>\n"
+"                                <span style=\"font-weight: bolder;\">Reason:"
+"</span>\n"
+"                                ${line.reason_state}\n"
+"                            </li>\n"
+"                        % endif\n"
+"                        </ul>\n"
+"                    % endfor\n"
+"                    </ul>\n"
+"                    </li>\n"
+"                    <li><span style=\"font-weight: bolder;\">Temperature: </"
+"span>\n"
+"                    % if object.temperature:\n"
+"                        Correct\n"
+"                    % else:\n"
+"                        Not correct\n"
+"                    % endif\n"
+"                     </li>\n"
+"                    <li><span style=\"font-weight: bolder;\">State of the "
+"van: </span>\n"
+"                    % if object.state_of_the_van:\n"
+"                        Correct\n"
+"                    % else:\n"
+"                        Not correct\n"
+"                    % endif \n"
+"                    </li>\n"
+"                    <li><span style=\"font-weight: bolder;\">Message: </"
+"span> ${ctx.get('reason')}</li>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"line-height: 1.6;\">\n"
+"                    <span>Se ha detectado la validación de una transferencia "
+"generada por ${ctx.get('user')} que no ha pasada el control de calidad con "
+"fecha ${ctx.get('datetime')}.</span>\n"
+"                    <li><span style=\"font-weight: bolder;\">Transferencia: "
+"</span> ${object.picking_id.name}</li>\n"
+"                    <li><span style=\"font-weight: bolder;\">Lineas "
+"afectadas: </span>\n"
+"                    <ul>\n"
+"                    % for line in object.quality_line_ids:\n"
+"                        <li> \n"
+"                            <span>${line.product_id.name}</span>\n"
+"                        </li>\n"
+"                        <ul>\n"
+"                        <li>\n"
+"                            <span style=\"font-weight: bolder;\">Lote: </"
+"span>\n"
+"                            ${line.lot_id.name}\n"
+"                        </li>\n"
+"                        <li>\n"
+"                            <span style=\"font-weight: bolder;\">cantidad: </"
+"span>\n"
+"                            ${line.qty_done}\n"
+"                        </li>\n"
+"                        % if line.failed_expiration:\n"
+"                            <li>\n"
+"                                <span style=\"font-weight: bolder;"
+"\">Expiración incorrecta</span>\n"
+"                            </li>\n"
+"                        % endif\n"
+"                        % if not line.correct_state_of_product:\n"
+"                            <li>\n"
+"                                <span style=\"font-weight: bolder;\">Razón:</"
+"span>\n"
+"                                ${line.reason_state}\n"
+"                            </li>\n"
+"                        % endif\n"
+"                        </ul>\n"
+"                    % endfor\n"
+"                    </ul>\n"
+"                    </li>\n"
+"                    <li><span style=\"font-weight: bolder;\">Temperatura: </"
+"span>\n"
+"                    % if object.temperature:\n"
+"                        Correct\n"
+"                    % else:\n"
+"                        No correcta\n"
+"                    % endif\n"
+"                     </li>\n"
+"                    <li><span style=\"font-weight: bolder;\">Estado del "
+"camión: </span>\n"
+"                    % if object.state_of_the_van:\n"
+"                        Correcto\n"
+"                    % else:\n"
+"                        incorrecto\n"
+"                    % endif \n"
+"                    </li>\n"
+"                    <li><span style=\"font-weight: bolder;\">Mensaje: </"
+"span> ${ctx.get('reason')}</li>\n"
+"                </div>\n"
+"            "
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "<p></p>"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "<p>All seems correct.</p>"
+msgstr "<p>Todo parece correcto.</p>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "<p>Destination must be set.</p>"
+msgstr "<p>Destino debe ser establecido</p>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "<p>Error creating the picking.</p>"
+msgstr "<p>Error creando picking.</p>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/multiple_validate_wh_ops.js:0
+#, python-format
+msgid ""
+"<p>If you have processed less than what was initially planned.</p><br/><div "
+"class='form-check'><input class='form-check-input' type='checkbox' "
+"onclick=document.getElementById('b_order').setAttribute('value',document."
+"getElementById('b_order').value*-1) value='-1' id='b_order'/><label "
+"class='form-check-label' for='flexCheckDefault'>Create BackOrder</label></"
+"div>"
+msgstr ""
+"<p>If you have processed less than what was initially planned.</p><br/><div "
+"class='form-check'><input class='form-check-input' type='checkbox' "
+"onclick=document.getElementById('b_order').setAttribute('value',document."
+"getElementById('b_order').value*-1) value='-1' id='b_order'/><label "
+"class='form-check-label' for='flexCheckDefault'>Create BackOrder</label></"
+"div>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "<p>Number of products must be higher than 0.</p>"
+msgstr "<p>Numero de productos debe ser mayor que 0.</p>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "<p>Origin and Destination must be different.</p>"
+msgstr "<p>Origen y destino debe ser diferente.</p>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "<p>Origin and Destination must not be direct son/parent.</p>"
+msgstr "<p>Origen y destino no deben estar asociados.</p>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "<p>Origin must be set.</p>"
+msgstr "<p>Origen debe estar establecido</p>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#, python-format
+msgid "<p>Supplier must be set.</p>"
+msgstr "<p>Proveedor debe esta establecido</p>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#, python-format
+msgid ""
+"<p>You have processed less than what was initially planned.</p><br/><div "
+"class='form-check'><input class='form-check-input' type='checkbox' "
+"onclick=document.getElementById('b_order').setAttribute('value',document."
+"getElementById('b_order').value*-1) value='-1' id='b_order'/><label "
+"class='form-check-label' for='flexCheckDefault'>Create BackOrder</label></"
+"div>"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#, python-format
+msgid ""
+"<p>You have processed more than what was initially planned. Are you sure you "
+"want to validate the picking?</p>"
+msgstr ""
+"<p>Has procesado más cantidad que la planeadas inicialmente.  ¿Estás seguro "
+"de validar la transferencia?</p>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#, python-format
+msgid ""
+"<p>You have processed more than what was initially planned. Are you sure you "
+"want to validate the picking?</p><br/>"
+msgstr ""
+"<p>Has procesado más cantidad que la planeadas inicialmente.  ¿Estás seguro "
+"de validar la transferencia?</p><br/>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/move_line.js:0
+#, python-format
+msgid "<p>You need to select or create a lot.</p><br/>"
+msgstr "<p>Necesitas crear o establecer un lote.</p><br/>"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Use Locations instead of Warehouses</span>"
+msgstr ""
+"<span class=\"o_form_label\">Usar ubicaciones en vez de almacenes</span>"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_inventory.py:0
+#, python-format
+msgid "A new inventory adjustement was made by "
+msgstr "Un nuevo ajuste de inventario fue hecho por "
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "A product was discarded by "
+msgstr "Producto fue desechado por "
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Add Product..."
+msgstr "Añadir producto..."
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#, python-format
+msgid "Affected move lines:"
+msgstr "Lineas afectadas:"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Ask for a signature when validating delivery pickings."
+msgstr "Solicitar firma cuando las transferencias son validadas."
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_lot_sequence
+msgid "Autocomplete the lot name with the corresponding sequence"
+msgstr "Autocompletar el número de lote con secuencia correspondiente"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Autocomplete the lot name with the corresponding sequence."
+msgstr "Autocompletar el número de lote con secuencia correspondiente."
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.suppliers_view_kanban
+msgid "Avatar"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Back"
+msgstr "Volver"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#, python-format
+msgid "Barcode '' not found"
+msgstr "Código de barras '' no encontrado"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/multiple_validate_wh_ops.js:0
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#, python-format
+msgid "Barcode don't match any product in line"
+msgstr "Código de barras no encontrado en ningún producto de las lineas"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/inv_upd.js:0
+#: code:addons/inventory_log/static/src/js/quick_info.js:0
+#, python-format
+msgid "Barcode not found"
+msgstr "Código de barras no encontrado"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Cancel reservation"
+msgstr "Cancelar reserva"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Check Av"
+msgstr "Comprobar Disp"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Check Availability"
+msgstr "Comprobar disponibilidad"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Check all"
+msgstr "Comprobar todo"
+
+#. module: inventory_log
+#: model_terms:ir.actions.act_window,help:inventory_log.action_quality_check_history
+msgid "Click here to create a quality check."
+msgstr "Click aquí para crear un control de calidad."
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/warehouse_ops.js:0
+#, python-format
+msgid "Cod Barras"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.actions.client,name:inventory_log.cod_barr
+msgid "Cod. Barras testing"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_res_company
+msgid "Companies"
+msgstr "Compañias"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Company Logo"
+msgstr "Logo de compañias"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Completed:"
+msgstr "Completado:"
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Continue"
+msgstr "Continuar"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_form_view
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_line_form_view
+msgid "Correct"
+msgstr "Correcto"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Correct State"
+msgstr "Estado correcto"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Correct State Van"
+msgstr "Estado correcto camión"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__correct_temperature
+#, python-format
+msgid "Correct Temperature"
+msgstr "Temperatura correcta"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/models/stock_move.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__correct_state_of_product
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__correct_state_of_product
+#, python-format
+msgid "Correct state"
+msgstr "Estado correcto"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_form_view
+msgid "Correct, temperature was at"
+msgstr "Correcto, temperatura fué"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Create"
+msgstr "Crear"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Create Internal transfer"
+msgstr "Crear transferencia interna"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Create Purchase Order"
+msgstr "Crear pedido de compra"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Create lot"
+msgstr "Crear lote"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__create_uid
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__create_date
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: inventory_log
+#: model:ir.actions.act_window,name:inventory_log.location_open_quants
+msgid "Current Stock"
+msgstr "Stock actual"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Current location"
+msgstr "Ubicación actual"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/picking_lines.js:0
+#: code:addons/inventory_log/static/src/js/warehouse_ops.js:0
+#: model:ir.actions.client,name:inventory_log.date_range
+#, python-format
+msgid "Date Range"
+msgstr "Rango de fechas"
+
+#. module: inventory_log
+#: model:ir.model.fields,help:inventory_log.field_quality_check__date_done
+msgid "Date at which the transfer has been processed or cancelled."
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__deliver_temperature
+msgid "Deliver Temperature"
+msgstr "Temperatura de envio"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.suppliers_view_kanban
+msgid "Delivery"
+msgstr "Entrega"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Delivery Orders"
+msgstr "Pedidos de entrega"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Delivery Zone"
+msgstr "Zona de envio"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Delivery zone"
+msgstr "Zona de envio"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Destination Location"
+msgstr "Ubicación de destino"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Destination location: "
+msgstr "Ubicación de destino: "
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Destination place:"
+msgstr "Destino:"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Discard products"
+msgstr "Desechar productos"
+
+#. module: inventory_log
+#: model:mail.template,subject:inventory_log.scrap_created_email_template_v1_0
+msgid "Discarded products:"
+msgstr "Productos desechos:"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_res_company__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_stock_inventory__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking_type__display_name
+#: model:ir.model.fields,field_description:inventory_log.field_stock_warehouse__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Divide"
+msgstr "Dividir"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Divide operation"
+msgstr "Dividir operacion"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__qty_done
+#, python-format
+msgid "Done"
+msgstr "Hecho"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "EAN-13"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__sent_mail
+#, python-format
+msgid "Email sent"
+msgstr "Enviar email"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.respon_view_kanban
+msgid "Employee's Name"
+msgstr "Nombre empleados"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Empty"
+msgstr "Vacio"
+
+#. module: inventory_log
+#: model:res.groups,name:inventory_log.group_enable_delivery_zone_filters
+msgid "Enable Delivery Zone filters"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_inventory_loss
+#: model:res.groups,name:inventory_log.group_enable_inventory_loss
+#, python-format
+msgid "Enable Inventory Loss"
+msgstr "Activar desecho de inventario"
+
+#. module: inventory_log
+#: model:res.groups,name:inventory_log.group_enable_location_filters
+msgid "Enable Location filters"
+msgstr "Activar filtro de ubicación"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_quality_control
+#: model:res.groups,name:inventory_log.group_enable_quality_control
+#, python-format
+msgid "Enable Quality Control"
+msgstr "Activar control de calidad"
+
+#. module: inventory_log
+#: model:res.groups,name:inventory_log.group_enable_signature
+msgid "Enable Signature"
+msgstr "Activar filtro"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_customer_filters
+#: model:res.groups,name:inventory_log.group_enable_customer_filters
+#, python-format
+msgid "Enable customer filters"
+msgstr "Activar filtro de clientes"
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_customer_filters
+msgid "Enable customer filters in Delivery Order Pickings View"
+msgstr "Activar filtros de clientes en la vista pedidos de entrega"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_date_filters
+#: model:res.groups,name:inventory_log.group_enable_date_filters
+#, python-format
+msgid "Enable date filters"
+msgstr "Activar filtros de fecha"
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_date_filters
+msgid "Enable date filters in Delivery Order Pickings View"
+msgstr "Activar filtros de fecha en la vista pedidos de entrega"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_delivery_zone_filters
+#, python-format
+msgid "Enable delivery zone filters"
+msgstr "Activar filtros de zona de entrega"
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_delivery_zone_filters
+msgid "Enable delivery zone filters in Delivery Order Pickings View"
+msgstr "Activar zona de entrega en vista de pedidos de entrega"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_filters
+#: model:res.groups,name:inventory_log.group_enable_filters
+#, python-format
+msgid "Enable filters"
+msgstr "Activar filtros"
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_filters
+msgid "Enable filters in Delivery Order Pickings View"
+msgstr "Activar filtros en vista de pedidos de entrega"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_location_filters
+#, python-format
+msgid "Enable location filters"
+msgstr "Activar filtros por ubicación"
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_location_filters
+msgid "Enable location filters in Delivery Order Pickings View"
+msgstr "Activar filtros ubicaciones en vista de pedidos de entrega"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_lot_sequence
+#: model:res.groups,name:inventory_log.group_enable_lot_sequence
+#, python-format
+msgid "Enable lot sequence"
+msgstr "Activar secuencia de lotes"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_manual_gs1
+#: model:res.groups,name:inventory_log.group_enable_manual_gs1
+#, python-format
+msgid "Enable manual GS1"
+msgstr ""
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_manual_gs1
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Enable manual entry of the GS1 tag."
+msgstr ""
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_inventory_loss
+msgid "Enable options for inventory loss"
+msgstr "Activar opción de perdida de inventario"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Enable options for inventory loss."
+msgstr "Activar opción de perdida de inventario."
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_quality_control
+msgid "Enable options for quality control"
+msgstr "Activar opción para control de calidad"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Enable options for quality control."
+msgstr "Activar opción para control de calidad."
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_enable_signature
+#, python-format
+msgid "Enable signature"
+msgstr "Activar firma"
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_enable_signature
+msgid "Enable signature in Delivery Order Pickings View"
+msgstr "Activar firma en la vista de  pedidos de entrega"
+
+#. module: inventory_log
+#: model:ir.actions.client,name:inventory_log.end_screen_p
+msgid "End"
+msgstr "Fin"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Exit"
+msgstr "Salir"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Expiration:"
+msgstr "Vencimiento:"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_move.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__expired
+#, python-format
+msgid "Expired"
+msgstr "Vencido"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Expìration Date:"
+msgstr "Fecha de vencimiento:"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/models/stock_move.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__failed_expiration
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__failed_expiration
+#, python-format
+msgid "Failed expiration"
+msgstr "Expiración fallida"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_line_form_view
+msgid "Fails quality control by"
+msgstr "No pasa control de calidad por"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Filters"
+msgstr "Filtros"
+
+#. module: inventory_log
+#: model:ir.actions.client,name:inventory_log.end_screen
+msgid "Final Screen"
+msgstr "Pantalla final"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Finish"
+msgstr "Finalizar"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Partners)"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Go Back"
+msgstr "Volver"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Group by"
+msgstr "Agrupado"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_purchase_order__id
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__id
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__id
+#: model:ir.model.fields,field_description:inventory_log.field_res_company__id
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__id
+#: model:ir.model.fields,field_description:inventory_log.field_stock_inventory__id
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move__id
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__id
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__id
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking_type__id
+#: model:ir.model.fields,field_description:inventory_log.field_stock_warehouse__id
+msgid "ID"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,help:inventory_log.field_quality_check__message_needaction
+#: model:ir.model.fields,help:inventory_log.field_quality_check__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los nuevos mensajes requieren su atención."
+
+#. module: inventory_log
+#: model:ir.model.fields,help:inventory_log.field_quality_check__message_has_error
+#: model:ir.model.fields,help:inventory_log.field_quality_check__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "If you undo the move the values will be restored."
+msgstr "Si deshace el movimiento, los valores se restaurarán."
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__image_ids
+#, python-format
+msgid "Images"
+msgstr "Imagenes"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_form_view
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_line_form_view
+msgid "Incorrect"
+msgstr "Incorrecto"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_form_view
+msgid "Incorrect, temperature was at"
+msgstr "Si deshace el movimiento, los valores se restaurarán"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Info"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/kanban_view_handler.js:0
+#: code:addons/inventory_log/static/src/js/main_screen.js:0
+#, python-format
+msgid "Internal Transfer"
+msgstr "Transferencia interna"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Internal Transfers"
+msgstr "Transferencia internas"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "InvApp "
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/kanban_view_handler.js:0
+#: code:addons/inventory_log/static/src/js/main_screen.js:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: model:ir.model,name:inventory_log.model_stock_inventory
+#, python-format
+msgid "Inventory"
+msgstr "Inventario"
+
+#. module: inventory_log
+#: model:mail.template,subject:inventory_log.inventory_created_email_template_v1_3
+msgid "Inventory Adjustement: ${object.location_ids.name}"
+msgstr "Ajuste de inventario: ${object.location_ids.name}"
+
+#. module: inventory_log
+#: model:ir.ui.menu,name:inventory_log.menu_inventory_logistic
+msgid "Inventory Logistic"
+msgstr "Logistica de inventario"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_company.py:0
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_company__inventory_loss_responsable_user_id
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__inventory_loss_responsable_user_id
+#, python-format
+msgid "Inventory Loss Responsable"
+msgstr "Responsable de desecho de inventario"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: model:ir.actions.client,name:inventory_log.inv_upd
+#, python-format
+msgid "Inventory Update"
+msgstr "Actualizar inventario"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.suppliers_view_kanban
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_res_company____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_stock_inventory____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking_type____last_update
+#: model:ir.model.fields,field_description:inventory_log.field_stock_warehouse____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__write_uid
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__write_uid
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__write_date
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__write_date
+msgid "Last Updated on"
+msgstr "Última modificación en"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: inventory_log
+#: model:ir.actions.act_window,name:inventory_log.location_kanban_action
+#: model:ir.actions.act_window,name:inventory_log.location_kanban_action_duwi
+msgid "Location Kanban"
+msgstr ""
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.locations_view_kanban
+msgid "Location Name"
+msgstr "Nombre de la ubicación"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/inv_upd.js:0
+#, python-format
+msgid "Location not set"
+msgstr "Ubicación no establecida"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Location: "
+msgstr "Ubicación: "
+
+#. module: inventory_log
+#: model:ir.actions.client,name:inventory_log.main_screen_fullscreen
+msgid "Logistic Fullscreen Screen"
+msgstr ""
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.suppliers_view_kanban
+msgid "Logo"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#: model:ir.actions.act_window,name:inventory_log.lot_kanban_action
+#: model:ir.actions.act_window,name:inventory_log.only_view_lot_kanban_action
+#: model:ir.actions.act_window,name:inventory_log.only_view_lot_kanban_action2
+#, python-format
+msgid "Lot"
+msgstr "Lote"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__lot_id
+msgid "Lot/Serial Number"
+msgstr "Lote/Nº Serie"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Lot:"
+msgstr "Lote:"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/models/stock_inventory.py:0
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Lot: "
+msgstr "Lote: "
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Lote caducado"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__main_move_line_id
+msgid "Main Move Line"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.actions.client,name:inventory_log.main_screen
+msgid "Main Screen"
+msgstr "Pantalla principal"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Manual Move"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.module.category,name:inventory_log.user_materials
+msgid "Material Manager"
+msgstr "Administrador"
+
+#. module: inventory_log
+#: model:ir.module.category,description:inventory_log.user_materials
+msgid "Material Move"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Material manager"
+msgstr "Administrador"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#, python-format
+msgid "Message: "
+msgstr "Mensaje: "
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_ids
+msgid "Messages"
+msgstr "Mensaje"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Modal body text goes here."
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Motive"
+msgstr "Motivo"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_inventory.py:0
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Motive: "
+msgstr "Motivo: "
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/kanban_view_handler.js:0
+#: code:addons/inventory_log/static/src/js/multiple_validate_wh_ops.js:0
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#: model:ir.actions.client,name:inventory_log.move_line
+#, python-format
+msgid "Move Line"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Multiple Pickings"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/picking_lines.js:0
+#, python-format
+msgid "Multiple Validate"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__name
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__name
+#, python-format
+msgid "Name"
+msgstr "Nombre"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Name:"
+msgstr "Nombre:"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "No hacer. No hay cantidad reservada."
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_move.py:0
+#: code:addons/inventory_log/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__reason_state
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__quality_msg
+#, python-format
+msgid "Not checked quality"
+msgstr "Control de calidad no superado"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Not defined"
+msgstr "No definido"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Not enough stock for:<br/>"
+msgstr "No hay suficiente stock:<br/>"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_picking.py:0
+#, python-format
+msgid "Nothing to check the availability for."
+msgstr "No hay nada para comprobar disponibilidad."
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,help:inventory_log.field_quality_check__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,help:inventory_log.field_quality_check__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/inv_upd.js:0
+#, python-format
+msgid "Number of products must be higher than 0"
+msgstr "La cantidad de producto debe ser mayor que 0"
+
+#. module: inventory_log
+#: model:ir.model.fields,help:inventory_log.field_quality_check__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "OK"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "On Hand"
+msgstr "A mano"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Origin location: "
+msgstr "Origen: "
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__original_qty
+msgid "Original Qty"
+msgstr "Cantidad original"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Other features"
+msgstr "Otras caractiristicas"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__overdue_days
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__overdue_days
+msgid "Overdue Days"
+msgstr "Días atrasados"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/models/stock_move.py:0
+#, python-format
+msgid "Overdue days"
+msgstr "Días atrasados"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Partner"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__picking_id
+#, python-format
+msgid "Picking"
+msgstr "Transferencia"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_move.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move__picking_partner_id
+#, python-format
+msgid "Picking Client"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Picking Correctly Created!"
+msgstr "¡Transferencia creada correctamente!"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/date_range.js:0
+#: code:addons/inventory_log/static/src/js/multiple_validate_wh_ops.js:0
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#: model:ir.actions.client,name:inventory_log.picking_lines
+#, python-format
+msgid "Picking Lines"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/picking_picture.js:0
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#: model:ir.actions.client,name:inventory_log.picking_picture
+#, python-format
+msgid "Picking Picture"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_stock_picking_type
+msgid "Picking Type"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__date_done
+#, python-format
+msgid "Picking date of Transfer"
+msgstr "Fecha de transferencia"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__scheduled_date
+#, python-format
+msgid "Picking scheduled date"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#, python-format
+msgid "Picking: "
+msgstr "Transferencias:"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Place of origin:"
+msgstr "Origen:"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Price"
+msgstr "Precio"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__product_id
+#: model_terms:ir.ui.view,arch_db:inventory_log.product_kanban_view
+#, python-format
+msgid "Product"
+msgstr "Producto"
+
+#. module: inventory_log
+#: model:ir.actions.act_window,name:inventory_log.product_kanban_action
+msgid "Product Kanban"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_inventory.py:0
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Product: "
+msgstr "Producto:"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Prop."
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Purchase"
+msgstr "Compra"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Purchase Correctly Created!"
+msgstr "Compra creada correctamente!"
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/main_screen.js:0
+#: model:ir.actions.client,name:inventory_log.purchases
+#, python-format
+msgid "Purchases"
+msgstr "Compras"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Qty"
+msgstr "Cant"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/models/stock_inventory.py:0
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Qty: "
+msgstr "CANT:"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/models/stock_move.py:0
+#: code:addons/inventory_log/models/stock_picking.py:0
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: model:ir.actions.act_window,name:inventory_log.action_quality_check_history
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__quality_check
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__quality_check
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__quality_check
+#: model:ir.ui.menu,name:inventory_log.menu_quality_check
+#, python-format
+msgid "Quality Check"
+msgstr "Control de calidad"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Quality Check "
+msgstr "Control de calidad"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Quality Control"
+msgstr "Control de calidad"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message
+#, python-format
+msgid "Quality Control Message"
+msgstr "mensaje control de calidad"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_company.py:0
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_company__quality_responsable_user_id
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__quality_responsable_user_id
+#, python-format
+msgid "Quality Control Responsable"
+msgstr "Responsable control de calidad"
+
+#. module: inventory_log
+#: model:mail.template,subject:inventory_log.quality_not_checked_email_template_v1_2
+msgid "Quality control (Picking: ${object.picking_id.name})"
+msgstr "Control de calidad (Transferencia: ${object.picking_id.name})"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__quality_line_ids
+#, python-format
+msgid "Quality lines"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/select_barcode.js:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: model:ir.actions.client,name:inventory_log.quick_info
+#, python-format
+msgid "Quick Info"
+msgstr "Info rápida"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Quick Info EAN13"
+msgstr "Info rápida EAN13"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Ready"
+msgstr "Preparado"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__reason_state
+#, python-format
+msgid "Reason"
+msgstr "Motivo"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/models/stock_move.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__reason_failed_expiration
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__reason_failed_expiration
+#, python-format
+msgid "Reason of the failed expiration"
+msgstr "Motivo fallo de fecha de expiración"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#, python-format
+msgid "Reason: "
+msgstr "Razón: "
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Receipts"
+msgstr "Recepciones"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/quick_info.js:0
+#, python-format
+msgid "Reference not found"
+msgstr "Referencia no encontrada"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Reserved"
+msgstr "Reservado"
+
+#. module: inventory_log
+#: model:ir.actions.act_window,name:inventory_log.respon_kanban_action
+msgid "Respon Kanban"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/purchase.py:0
+#: code:addons/inventory_log/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_purchase_order__res_signature
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__res_signature
+#, python-format
+msgid "Respon Signature"
+msgstr "Firma responsable"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/models/purchase.py:0
+#: code:addons/inventory_log/models/stock_picking.py:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#: model:ir.model.fields,field_description:inventory_log.field_purchase_order__responsable
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__responsable
+#, python-format
+msgid "Responsable"
+msgstr ""
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Responsable of the inventory loss."
+msgstr "Responsable de desecho de inventario."
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Responsable of the quality control."
+msgstr "Responsable de control de calidad."
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#, python-format
+msgid "Result"
+msgstr "Resultado"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__review_note
+#, python-format
+msgid "Review Note"
+msgstr "Nota de revisión"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__reviewed
+#, python-format
+msgid "Reviewed"
+msgstr "Reservado"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_form_view
+msgid "Rounding Form"
+msgstr ""
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_tree_view
+msgid "Rounding Tree"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Save"
+msgstr "Guardar"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Scan Material"
+msgstr "Escanear Material"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Scan Product or Location"
+msgstr "Escanear producto o Ubicación"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Scheduled Date"
+msgstr "Fecha prevista"
+
+#. module: inventory_log
+#: model:ir.model.fields,help:inventory_log.field_quality_check__scheduled_date
+msgid ""
+"Scheduled time for the first part of the shipment to be processed. Setting "
+"manually a value here would set it as expected date for all the stock moves."
+msgstr ""
+"Tiempo programado para que se procese la primera parte del envío. Establecer "
+"manualmente un valor aquí lo establecería como la fecha esperada para todos "
+"los movimientos de stock."
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/main_screen.js:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Scrap"
+msgstr "Desechos"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Scraps done with the Internal transfer system"
+msgstr "Desechos realizados con transferencias internas"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Search barcode"
+msgstr "Buscar código de barras"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Search product reference"
+msgstr "Buscar referencia del producto"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Select"
+msgstr "Seleccionar"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/main_screen.js:0
+#: code:addons/inventory_log/static/src/js/quick_info.js:0
+#, python-format
+msgid "Select Barcode"
+msgstr "Seleccionar código de barras"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Select Date"
+msgstr "Seleccionar fecha"
+
+#. module: inventory_log
+#: model:ir.actions.client,name:inventory_log.op_type_select
+msgid "Select Operation"
+msgstr "Seleccionar operación"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid "Select barcode"
+msgstr "Seleccionar código de barras"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_send_inventory_loss_mail
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_send_quality_mail
+#, python-format
+msgid "Send mail"
+msgstr "Enviar email"
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_send_inventory_loss_mail
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Send mail if the inventory is changed."
+msgstr "Enviar emial si el inventario cambia."
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_send_quality_mail
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "Send mail if the quality check is not passed."
+msgstr "Enviar email si el control de calidad ha sido erróneo."
+
+#. module: inventory_log
+#: model:res.groups,name:inventory_log.group_send_inventory_loss_mail
+msgid "Send mail inventory loss"
+msgstr "Enviar email de desecho de inventario"
+
+#. module: inventory_log
+#: model:res.groups,name:inventory_log.group_send_quality_mail
+msgid "Send mail quality check"
+msgstr "Enviar email de control de calidad"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "Several products have been discarded by "
+msgstr "Varios productos han sido descartado por "
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+#, python-format
+msgid "Signature"
+msgstr "Firma"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Source Location"
+msgstr "Ubicación de origen"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__state_of_the_van
+#: model:ir.model.fields,field_description:inventory_log.field_stock_picking__state_of_the_van
+#, python-format
+msgid "State of the van"
+msgstr "Estado del camión"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#, python-format
+msgid "State of the van: "
+msgstr "Estado del camión: "
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.actions.act_window,name:inventory_log.supplier_kanban_action
+msgid "Supplier Kanban"
+msgstr ""
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Supplier.Ref"
+msgstr "Ref. Proveedor"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Supplier:"
+msgstr "Proveedor:"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Take picture"
+msgstr "Hacer foto"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__temperature
+#, python-format
+msgid "Temperature"
+msgstr "Temperatura"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Temperature (°C)"
+msgstr "Temperatura (°C)"
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__deliver_temperature
+#, python-format
+msgid "Temperature at deliver"
+msgstr "Temperature at deliver"
+
+#. module: inventory_log
+#: model:res.groups,comment:inventory_log.group_use_locations
+#: model_terms:ir.ui.view,arch_db:inventory_log.res_config_settings_view_form
+msgid "The internal tranfer Module will work with locations."
+msgstr "El Módulo de transferencia interna funcionará con ubicaciones."
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_picking.py:0
+#, python-format
+msgid ""
+"The picture can't be added to the picking, please contact with your "
+"administrator"
+msgstr ""
+"La imagen no se puede agregar a la selección, comuníquese con su "
+"administrador"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid ""
+"There is no merchandise to reserve, you will have to make a purchase or an "
+"inventory adjustment"
+msgstr ""
+"No hay mercadería para reservar, tendrás que hacer una compra o un ajuste de "
+"inventario"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "To do"
+msgstr "Por hacer"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "To do:"
+msgstr "Por hacer:"
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Undo"
+msgstr "deshacer"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Undo move"
+msgstr "Deshacer movimiento"
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/res_config_settings.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_res_config_settings__group_use_locations
+#: model:res.groups,name:inventory_log.group_use_locations
+#, python-format
+msgid "Use Locations instead of Warehouses"
+msgstr "Usar ubicaciones en lugar de almacenes"
+
+#. module: inventory_log
+#: model:res.groups,name:inventory_log.group_user_plus_materials
+msgid "User and Material"
+msgstr "Usuario y material"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Validate"
+msgstr "Validar"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/move_line.js:0
+#, python-format
+msgid "Validate Multiple Picking"
+msgstr "Validar multiples transferencias"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/move_line.js:0
+#: code:addons/inventory_log/static/src/js/picking_picture.js:0
+#, python-format
+msgid "Validate Picking"
+msgstr "Validar transferencia"
+
+#. module: inventory_log
+#: model:ir.actions.client,name:inventory_log.validate_wh_ops
+msgid "Validate Wh Ops"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#: code:addons/inventory_log/models/stock_move.py:0
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check_line__validated_on_date
+#: model:ir.model.fields,field_description:inventory_log.field_stock_move_line__validated_on_date
+#, python-format
+msgid "Validated on date"
+msgstr "Fecha de validación"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "View pictures"
+msgstr "Ver imágenes"
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Almacén"
+
+#. module: inventory_log
+#: model:ir.actions.act_window,name:inventory_log.warehouse_kanban_action
+msgid "Warehouse Kanban"
+msgstr "Nombre  Ubicación"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.warehouse_view_kanban
+msgid "Warehouse Name"
+msgstr "Almacén"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/date_range.js:0
+#: code:addons/inventory_log/static/src/js/main_screen.js:0
+#: code:addons/inventory_log/static/src/js/multiple_validate_wh_ops.js:0
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#, python-format
+msgid "Warehouse Operations"
+msgstr "Operaciones de almacen"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/js/mat_borrow.js:0
+#: code:addons/inventory_log/static/src/js/multiple_validate_wh_ops.js:0
+#: code:addons/inventory_log/static/src/js/purchases.js:0
+#: code:addons/inventory_log/static/src/js/type_selection.js:0
+#: code:addons/inventory_log/static/src/js/validate_wh_ops.js:0
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates.xml:0
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "Warning"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,field_description:inventory_log.field_quality_check__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model.fields,help:inventory_log.field_quality_check__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/quality_check.py:0
+#, python-format
+msgid "Wrong expiration"
+msgstr ""
+
+#. module: inventory_log
+#: code:addons/inventory_log/models/stock_warehouse.py:0
+#, python-format
+msgid "You need to specify the lot / serial number for:<br/>"
+msgstr ""
+"Necesitas especificar un lote o un numero de seriaYou need to specify the "
+"lot / serial number for:<br/>"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/gs1_templates.xml:0
+#, python-format
+msgid ""
+"You will move fewer items. Do you want to move fewer items or move the "
+"remaining ones later?"
+msgstr ""
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.suppliers_view_kanban
+msgid "at"
+msgstr "hasta"
+
+#. module: inventory_log
+#: model_terms:ir.ui.view,arch_db:inventory_log.quality_check_line_form_view
+msgid "days"
+msgstr "días"
+
+#. module: inventory_log
+#. openerp-web
+#: code:addons/inventory_log/static/src/xml/templates2.xml:0
+#, python-format
+msgid "or select"
+msgstr "o seleccione"
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_quality_check
+msgid "quality.check"
+msgstr ""
+
+#. module: inventory_log
+#: model:ir.model,name:inventory_log.model_quality_check_line
+msgid "quality.check.line"
+msgstr ""

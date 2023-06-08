@@ -33,7 +33,6 @@ var MatOrder = AbstractAction.extend({
         "click .del": function(){ $("#code").html($("#code").html().slice(0, -1));},
         "click #origPlace": function(e) {
             e.preventDefault();
-            console.log('loc', this.location);
             if (this.location){
                 this.do_action('inventory_log.location_kanban_action',{
                     additional_context: {
@@ -70,7 +69,6 @@ var MatOrder = AbstractAction.extend({
         },
         "click .partner": function(e) {
             e.preventDefault();
-            console.log("Partner");
             this.do_action('inventory_log.respon_kanban_action',{
                 clear_breadcrumbs: true
             });
@@ -79,7 +77,6 @@ var MatOrder = AbstractAction.extend({
             e.preventDefault();
             var self = this;
             var domain = []
-            // console.log(Session.mats_categ_ids);
             if (Session.mats_categ_ids && Session.mats_categ_ids.length > 0)
                 domain.push(['categ_id', 'in', Session.mats_categ_ids])
             if (Session.orig)
@@ -88,7 +85,6 @@ var MatOrder = AbstractAction.extend({
                     method: 'avail_prod',
                     args: [Session.orig.id],
                 }).then(function(res){
-                    // console.log("res",res);
                     domain.push(['id', 'in', res])
                     self.do_action('inventory_log.product_kanban_action',{
                         additional_context: {
@@ -113,7 +109,6 @@ var MatOrder = AbstractAction.extend({
             if (Session.next_action){
                 var n_act = Session.next_action;
                 Session.next_action = false;
-                // console.log('next action', n_act, Session.next_action);
                 this.do_action(n_act);
             }
             else
@@ -194,13 +189,11 @@ var MatOrder = AbstractAction.extend({
                 
                 return;
             }
-            // console.log('create', Session.product_list);
             this._rpc({
                 model: 'stock.warehouse',
                 method: 'create_picking',
                 args: [Session.product_list,Session.orig.id,Session.dest.id],
             }).then(function(res){
-                // console.log("res",res);
                 $(".modal-title").html(_t("Result"));
                 if (res.length){
                     $(".modal-body").html(_t("<p>"+res+"</p>"));
@@ -222,21 +215,20 @@ var MatOrder = AbstractAction.extend({
             var prod_id = $(e.currentTarget).parent().attr('class').split(/prod_/)[1];
             $(e.currentTarget).parent().remove();
             Session.product_list[prod_id] && delete Session.product_list[prod_id];
-                
-        // console.log(Session.product_list);
         },
         "change .qty": function(e){
             var prod_id = $(e.currentTarget).parent().attr('class').split(/prod_/)[1];
             var lot_id = $(e.currentTarget).parent().children('.lot').attr('id');
-            console.log("Lot id ",lot_id);
-            console.log("Session.product_list[prod_id][lot_id] ",Session.product_list[prod_id][lot_id]);
+            if(lot_id){
             Session.product_list[prod_id][lot_id][1] = parseFloat($(e.currentTarget).val());
-            console.log("PRoducts after ",Session.product_list);
+            }
+            else{
+                Session.product_list[prod_id][0][1] = parseFloat($(e.currentTarget).val());
+            }
         },
         "click .lot": function(e) {
             var self = this;
             var prod_id = $(e.currentTarget).parent().attr('class').split(/prod_/)[1];
-            console.log("Producccccto ",prod_id);
             e.preventDefault();
             var m = new Date();
             var dateString =
@@ -246,7 +238,6 @@ var MatOrder = AbstractAction.extend({
                 ("0" + m.getUTCHours()).slice(-2) + ":" +
                 ("0" + m.getUTCMinutes()).slice(-2) + ":" +
                 ("0" + m.getUTCSeconds()).slice(-2);
-            console.log("Today tine ",dateString)
             var domain = [['product_id','=',parseInt(prod_id)]];
             this.do_action('inventory_log.only_view_lot_kanban_action2',{
                 additional_context: {
@@ -268,13 +259,11 @@ var MatOrder = AbstractAction.extend({
                 $(".modal").modal('show')
                 return;
             }
-            // console.log('check', Session.product_list);
             this._rpc({
                 model: 'stock.warehouse',
                 method: 'check_avail',
                 args: [Session.product_list, Session.orig.id],
             }).then(function(res){
-                // console.log("res",res);
                 $(".modal-title").html(_t("Result"));
                 if (res.length){
                     $(".modal-body").html(_t("<p>"+res+"</p>"));
@@ -290,13 +279,11 @@ var MatOrder = AbstractAction.extend({
     signed_picking: function () {
         var self = this;
         let sig_64 = this.myCanvas[0].toDataURL();
-        console.log(sig_64);
         this._rpc({
                 model: 'stock.warehouse',
                 method: 'create_picking',
                 args: [Session.product_list,Session.orig.id,Session.dest.id, Session.respon.id, sig_64.split(',')[1]],
             }).then(function(res){
-                // console.log("res",res);
                 $(".modal-title").html(_t("Result"));
                 if (res.length){
                     $(".modal-body").html(_t("<p>"+res+"</p>"));
@@ -313,26 +300,12 @@ var MatOrder = AbstractAction.extend({
     },
     start: async function () {
         this._super();
-        // console.log('start1');
         if (!Session.product_list)
             Session.product_list = {};
-        // this.canvas = new canvas();
         core.bus.on('barcode_scanned', this, this._onBarcodeScanned);
-        // if (!Session.mats_categ_ids)
-        //     this._rpc({
-        //         model: 'res.company',
-        //         method: 'search_read',
-        //         args: [[],['category_materials_ids']],
-        //     }).then(function(res){
-        //         if (res.length > 0)
-        //             Session.mats_categ_ids = res[0].category_materials_ids;
-        //     });
         var self = this;
-        // console.log('start2');
         self.getSession().user_has_group('inventory_log.group_use_locations').then(function(has_group){
             self.location = has_group;
-            console.log("Heloooo ",self.location);
-
         })
         setTimeout(function(){ 
             self._rpc({
@@ -340,27 +313,21 @@ var MatOrder = AbstractAction.extend({
                 method: 'warehouse_ops_count',
                 args: [],
             }).then(function(count){
-                console.log("COUUNY ",count);
                 Session.company_settings = count['company']
             });
         }, 1000);
-        console.log("Products ",Session.product_list);
         this.$el.html( await QWeb.render("MatOrder", {widget: this, products: Session.product_list, orig: Session.orig, dest: Session.dest, respon: Session.respon}));
     },
     _onBarcodeScanned: function(barcode) {
         var self = this;
-
         core.bus.off('barcode_scanned', this, this._onBarcodeScanned);
-        console.log("Leido ",barcode);
         this._rpc({
                 model: 'stock.warehouse',
                 method: 'check_barcode',
                 args: [barcode,],
             }).then(function(res){
-                // console.log("BARCODE RES",res);
                 if (res.length > 0){
                     if (res[0] == 'p'){
-                        console.log("PPP ",res);
                         if (!Session.product_list[res[1].id])
                             Session.product_list[res[1].id] = 
                                 {0:[res[1].name,parseFloat($("#code").html()) || 1,res[1].uom_id[0],res[1].tracking]};
@@ -376,7 +343,6 @@ var MatOrder = AbstractAction.extend({
                 }
                 else
                     core.bus.on('barcode_scanned', self, self._onBarcodeScanned);
-                // console.log("Session ",Session.product_list);
             });
 
 

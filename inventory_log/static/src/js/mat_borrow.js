@@ -96,13 +96,11 @@ odoo.define('inventory_log.mat_borrow', function (require) {
                     
                     return;
                 }
-                // console.log('create', Session.product_list);
                 this._rpc({
                     model: 'stock.warehouse',
                     method: 'create_picking_with_email',
                     args: [Session.product_list, Session.orig.id, Session.dest.id, false, false, Session.uid],
                 }).then(function(res){
-                    // console.log("res",res);
                     $(".modal-title").html(_t("Result"));
                     if (res.length){
                         $(".modal-body").html(_t("<p>"+res+"</p>"));
@@ -151,16 +149,13 @@ odoo.define('inventory_log.mat_borrow', function (require) {
         /* BARCODE */
         // on barcode sccaned make a request from odoo db to ensure if its some expected register
         _onBarcodeScanned: function(barcode) {
-            var self = this;
-            console.log("BARCODE",barcode);
-    
+            var self = this;    
             core.bus.off('barcode_scanned', this, this._onBarcodeScanned);
             this._rpc({
                     model: 'stock.warehouse',
                     method: 'check_barcode',
                     args: [barcode,],
                 }).then(function(res){
-                    console.log("BARCODE RES",res);
                     if (res.length > 0 && res[0] == 'p'){
                             Session.product_list = {}
                             Session.product_list[res[1].id] = [res[1].name,parseFloat($("#code").html()) || 1];
@@ -175,7 +170,6 @@ odoo.define('inventory_log.mat_borrow', function (require) {
         signed_picking: function () {
             var self = this;
             let sig_64 = this.canvas.myCanvas[0].toDataURL();
-            console.log(sig_64);
             this._rpc({
                     model: 'stock.warehouse',
                     method: 'create_picking_with_email',
@@ -203,7 +197,6 @@ odoo.define('inventory_log.mat_borrow', function (require) {
                 if (Session.next_action){
                     var n_act = Session.next_action;
                     Session.next_action = false;
-                    // console.log('next action', n_act, Session.next_action);
                     this.do_action(n_act);
                 }
                 else

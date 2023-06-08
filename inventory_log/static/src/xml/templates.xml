@@ -163,11 +163,7 @@
                                                             <th scope="row">Destination Location</th>
                                                                 <td><t t-esc="picking.location_dest_id[1]"/></td>
                                                             </tr>
-                                                            <tr t-if="p_type == 'outgoing'">
-                                                                <th scope="row">Delivery Zone</th>
-                                                                <td>
-                                                                </td>
-                                                            </tr>
+            
                                                             <tr>
                                                                 <th scope="row">Scheduled Date</th>
                                                                 <td>
@@ -175,10 +171,7 @@
                                                                     <input type="time" id="appt" name="appt"  t-att-value='date[1]'/>
                                                                 </td>
                                                             </tr>
-                                                            <tr t-if="picking.picking_type_code != 'outgoing'">
-                                                                <th scope="row">Responsable</th>
-                                                                <td class="col-6 partner" style="background-color: lightgray;"><t t-esc="respon and respon.name"/></td>
-                                                            </tr>
+                                                            
                                                             <t t-if="is_in_group">
                                                             <t t-log="p_type"/>
                                                                 <tr t-if="p_type == 'incoming'">
@@ -187,21 +180,6 @@
                                                                         <input class="temperature" min="0" type="number" step="0.01" t-att-value='picking.deliver_temperature'/>
                                                                     </td>
                                                                 </tr>
-                                                                <!--<tr>
-                                                                    <th scope="row">Delivery Status</th>
-                                                                    <td>
-                                                                        <select id="selected_status">
-                                                                            <t t-foreach="Object.keys(states)" t-as="s">
-                                                                                <t t-if="s === picking.state">
-                                                                                    <option selected="True" t-attf-value="{{s}}"><t t-esc="states[s]"/></option>
-                                                                                </t>
-                                                                                <t t-else="">
-                                                                                    <option t-attf-value="{{s}}"><t t-esc="states[s]"/></option>
-                                                                                </t>
-                                                                            </t>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>-->
                                                                 <tr t-if="p_type == 'incoming'">
                                                                     <th scope="row">Temperature</th>
                                                                     <td class="col-6"> 
@@ -574,7 +552,6 @@
                                     <h5 class='col-4'>Location </h5>
                                     <h5 class='col-4'>Lot</h5>
                                     <h5 class='col-2'>Prop.</h5>
-                                    <!--<h4 class='col-2'>Reserved</h4>-->
                                     <h5 class='col-2'>On Hand</h5>
                                 </t>
                                 <t t-else="">
@@ -589,7 +566,6 @@
                         </t>
                         <t t-foreach="quants" t-as="quant">
                             <div class="row mt-3"> 
-                                <!--<t t-log="quant"/>-->
                                 <t t-if="mode == 'l'">
                                     <input type='text' t-att-value='quant.product_id[1]' class='col-8 prod form-control' readonly="1"/>
                                     <input type='number' t-att-value='quant.reserved_quantity' class='col-2 qty form-control' readonly="1"/>
@@ -632,11 +608,33 @@
                     <div t-if="type === 'gs1'" class="btn-group-vertical" role="group" style="width: 100%;">
                                 <div class="btn-group">
                                     <div class="btn-secondary" disable="" style="align-content: center;display: grid;" type="text">
-                                        <button class="btn btn-primary search_barcode">Search barcode</button> 
-                                    </div><br/>
-                                    <div class="btn-secondary" disable="" style="align-content: center;display: grid;" type="text">
                                         <button class="btn btn-primary search_reference">Search product reference</button> 
                                     </div>
+                                </div>
+                                <div class="btn-group-vertical" role="group" style="width: 100%;height: 40%;">
+                                    <div class="btn-secondary" disable="" type="text" style="align-content: center;display: grid;">
+                                    <h3 id="code" style="text-align: center;vertical-align: middle;text-underline-position: ;"></h3>
+                                    </div>
+                                </div>
+                                <div class="btn-group full-h">
+                                    <button class="btn btn-secondary 1" >1</button>
+                                    <button class="btn btn-secondary 2" >2</button>
+                                    <button class="btn btn-secondary 3" >3</button>
+                                </div>
+                                <div class="btn-group full-h">
+                                    <button class="btn btn-secondary 4" >4</button>
+                                    <button class="btn btn-secondary 5" >5</button>
+                                    <button class="btn btn-secondary 6" >6</button>
+                                </div>
+                                <div class="btn-group full-h">
+                                    <button class="btn btn-secondary 7" >7</button>
+                                    <button class="btn btn-secondary 8" >8</button>
+                                    <button class="btn btn-secondary 9" >9</button>
+                                </div>
+                                <div class="btn-group full-h">
+                                    <button class="btn btn-secondary dot" >.</button>
+                                    <button class="btn btn-secondary 0" >0</button>
+                                    <button class="btn btn-secondary del" >&lt;</button>
                                 </div>
                             </div>
 
@@ -662,6 +660,8 @@
                     </div>
                 </div>
             </div>
+            <!-- Hacer algo para el modo ordenador TODO-->
+                
         </div> 
     </t>
 

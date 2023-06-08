@@ -16,8 +16,6 @@ KanbanRecord.include({
     _openRecord: function () {
         if (this.modelName === 'product.product' && this.$el.parents('.o_product_selection').length) {
             if (Session.inv_orig){
-                console.log("this.record.name ",this.record.name)
-                console.log("this.record  product_tmpl_id ",this.record)
                 var self = this
                 if (!Session.lines[Session.inv_orig.id])
                     Session.lines[Session.inv_orig.id] = {'name':Session.inv_orig.display_name}
@@ -29,7 +27,6 @@ KanbanRecord.include({
                     if (!Session.lines[Session.inv_orig.id][self.record.id.raw_value]){
                         Session.lines[Session.inv_orig.id][self.record.id.raw_value] = {}
                         Session.lines[Session.inv_orig.id][self.record.id.raw_value][-1] = {name:self.record.name.raw_value,qty: 1,lot_id:{id:-1,expiration_date:"",name:""},uom_id:self.record.uom_id.raw_value, tracking:res_prod_tracking };
-                        console.log("sesisino lines ", Session.lines)
                     }
                     else if(Session.lines[Session.inv_orig.id][self.record.id.raw_value] && Session.lines[Session.inv_orig.id][self.record.id.raw_value][-1]){
                         Session.lines[Session.inv_orig.id][self.record.id.raw_value][-1] = {name:self.record.name.raw_value,qty: 1,lot_id:{id:-1,expiration_date:"",name:""},uom_id:self.record.uom_id.raw_value, tracking:res_prod_tracking}; 
@@ -67,9 +64,7 @@ KanbanRecord.include({
             this.do_action("inventory_log.purchases");
             
         } else if (this.modelName === 'stock.picking' && this.$el.parents('.o_picking_selection').length) {
-
             Session.picking = {"id": this.record.id.raw_value};
-            console.log("1fhjwhjgefjhgbwefhjgwefdwhjegfwehj")
             this.do_action("inventory_log.validate_wh_ops");
             
         }
@@ -79,24 +74,19 @@ KanbanRecord.include({
             
         }
         else if (this.modelName === 'stock.production.lot' && this.$el.parents('.o_lot_kanban2').length) {
-            console.log("SSSSSSSS ",Session.product_list);
             if (!Session.product_list[this.record.product_id.raw_value][this.record.id.raw_value]){
                 if(Session.product_list[this.record.product_id.raw_value]['0']){
                     var temp = Session.product_list[this.record.product_id.raw_value]['0'];
-                    console.log("TEMP ",temp);
                     delete Session.product_list[this.record.product_id.raw_value]['0'];
                     temp.push(this.record.name.raw_value);
-                    console.log("TEMP 2:",temp);
                     Session.product_list[this.record.product_id.raw_value][this.record.id.raw_value] = temp;
                 }
                 else{
-                    console.log("Session assasa ",Session.product_list[this.record.product_id.raw_value]);
                 }
             }
             else{
                 Session.product_list[this.record.product_id.raw_value][this.record.id.raw_value][1] += 1;
             }
-            console.log("SESSSION PRODUCT LIST ",Session.product_list);
             this.do_action({
                 type: 'ir.actions.client',
                 name: _t('Internal Transfer'),
@@ -107,14 +97,11 @@ KanbanRecord.include({
         else if (this.modelName === 'stock.production.lot' && this.$el.parents('.o_lot_kanban').length) {
             Session.lot_id = this.record.id.raw_value;
             if(Session.update_inv){
-                console.log("Session.update_inv ")
                 Session.changed_lot = {
                     'id': this.record.id.raw_value,
                     'name':this.record.name.raw_value,
                     'expiration_date':this.record.expiration_date.raw_value,
                 }
-                console.log("Zuzanna changed lot ",Session.changed_lot)
-                console.log("a_type ",Session.a_type)
                 this.do_action({
                     type: 'ir.actions.client',
                     name: _t('Inventory'),
@@ -124,7 +111,6 @@ KanbanRecord.include({
                 }, {clear_breadcrumbs: true}); 
             }
             else{
-                console.log("line id ",Session.line_id)
                 this.do_action({
                     type: 'ir.actions.client',
                     name: _t('Move Line'),
@@ -135,7 +121,6 @@ KanbanRecord.include({
             }
         }
         else if (this.modelName === 'stock.warehouse' && this.$el.parents('.o_warehouse_selection').length) {
-            // console.log("2",this);
             if (this.state.context.type == "orig"){
             	Session.orig = {"id": this.record.id.raw_value, 'name': this.record.name.raw_value, 'display_name': this.record.display_name.raw_value};
             } else {
@@ -147,7 +132,6 @@ KanbanRecord.include({
                 this.do_action(this.state.context.n_action);
             
         } else if (this.modelName === 'stock.location' && this.$el.parents('.o_location_selection').length) {
-            // console.log("2",this);
             if (this.state.context.type == "orig"){
                 Session.orig = {"id": this.record.id.raw_value, 'name': this.record.name.raw_value, 'display_name': this.record.display_name.raw_value};
             } else {

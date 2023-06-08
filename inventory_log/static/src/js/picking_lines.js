@@ -15,10 +15,8 @@ odoo.define('inventory_log.picking_lines', function (require) {
         events: {
             "click .picking": function(e){ 
                 var picking_id = $(e.currentTarget).attr('id').split(/p_/)[1];
-                console.log("picking id ",picking_id)
                 Session.picking = {"id": picking_id};
                 Session.from_picking_lines = true;
-
                 this.do_action("inventory_log.validate_wh_ops");            
             },
             "click .back_to_date": function(){ 
@@ -48,11 +46,9 @@ odoo.define('inventory_log.picking_lines', function (require) {
                         selected.push(parseInt($(this).attr('id').split(/pid_/)[1]));
                     }
                 });
-                console.log("Selected ",selected)
                 Session.selected_pickings = selected;
             },
             "click .coninue_to_delivery_orders": function(){ 
-                console.log(" Session.selected_pickings ", Session.selected_pickings)
                 if(!Session.selected_pickings){
                     this.do_action({
                         type: 'ir.actions.client',
@@ -69,7 +65,6 @@ odoo.define('inventory_log.picking_lines', function (require) {
                         selected.push(parseInt($(this).attr('id').split(/pid_/)[1]));
                     }
                 });
-                console.log("Selected ",selected)
                 Session.selected_pickings = selected;
                 Session.picking = undefined
                 Session.pickings = selected
@@ -98,7 +93,6 @@ odoo.define('inventory_log.picking_lines', function (require) {
                 args: [this.warehouse,this.date,this.filter,this.zones],
             }).then(function(result){
                 self.pickings = result.grouped_pickings
-                console.log('result.grouped_pickings', result.grouped_pickings)
                 self.$el.html( QWeb.render("PickingLines", {pickings: result.grouped_pickings, filter: result.filter_name}));
             });
         },

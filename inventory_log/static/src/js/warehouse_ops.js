@@ -127,7 +127,6 @@ var WhOps = AbstractAction.extend({
                     method: 'warehouse_ops_count',
                     args: [],
                 }).then(function(count){
-                    console.log("COUUNY ",count);
                     Session.company_settings = count['company']
                     self.$el.html( QWeb.render("WhOpsXML", {count: count}));
                 });

@@ -131,8 +131,9 @@ class StockMove(models.Model):
         lot_original = self.lot_id
         prod = self.env['product.product'].sudo().browse(product_id)
         main_move_line_id = -1
+        _logger.info("DEBBUG lot_id "+str(lot_id))
         if self:
-            if lot_id or (lot_id == None and prod.tracking == 'none'):
+            if lot_id and not lot_id == -1 or (lot_id == None and prod.tracking == 'none'):
                 for operation in self.picking_id.move_line_ids_without_package:
                     if operation.id == self.id:
                         if not operation.lot_id and prod.tracking == 'none':
@@ -184,7 +185,9 @@ class StockMove(models.Model):
                                 operation.product_uom_qty = operation.product_uom_qty - qty_done
                             if operation.product_uom_qty < operation.qty_done:
                                 operation.product_uom_qty = operation.qty_done
-
+            elif not lot_id and not prod.tracking == 'none' or lot_id == -1:
+                return False
+            _logger.info("DEBBUG lot id "+str(lot_id))
             stock_move_line = self.env['stock.move.line'].sudo().create({ 
                 'picking_id': self.picking_id.id,
                 'qty_done': qty_done,

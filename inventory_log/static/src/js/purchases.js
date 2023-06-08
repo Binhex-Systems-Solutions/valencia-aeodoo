@@ -229,7 +229,6 @@ var Purchases = AbstractAction.extend({
         core.bus.on('barcode_scanned', this, this._onBarcodeScanned);
         this.getSession().user_has_group('inventory_log.group_use_locations').then(function(has_group){
             self.location = has_group;
-            console.log("Sessssion product ",Session.product_list);
             self.$el.html( QWeb.render("PurchasesXML", {widget: self, products: Session.product_list, supplier: Session.supplier, dest: Session.dest,valid: Session.validate, respon: Session.respon,refsup: Session.refsup}));
         });
     },
@@ -243,10 +242,8 @@ var Purchases = AbstractAction.extend({
                 method: 'check_barcode_purchases',
                 args: [barcode,],
             }).then(function(res){
-                console.log("REEEES ",res);
                 var modif = false;
                 if (res['p'].length > 0){
-                    console.log("Entraaaaaa")
                     modif = true;
                     res['p'].forEach(function(p){
                         if (!Session.product_list[p.id]){

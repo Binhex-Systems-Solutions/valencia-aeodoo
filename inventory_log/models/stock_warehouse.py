@@ -42,10 +42,7 @@ class Warehouse(models.Model):
 
     @api.model
     def check_barcode_inv(self, barcode,lot_id=False):
-        _logger.info("BARCODE "+str(barcode))
-        _logger.info("BARCODE lote  "+str(lot_id))
         p = self.env['product.product'].search_read(['|','|','|',['barcode', '=', barcode],['barcode', '=', barcode.replace("'","-")],['name', '=', barcode],['name', '=', barcode.replace("'","-")]],['name', 'display_name', 'standard_price'],limit=1)
-        
         lot = False
         if lot_id:
             lot_obj =  self.env['stock.production.lot'].sudo().search([('name','=',lot_id)])
@@ -84,9 +81,7 @@ class Warehouse(models.Model):
             dest = self.env['stock.location'].browse([dest])[0]
         else:
             dest = self.env['stock.warehouse'].browse([dest])[0].lot_stock_id
-        _logger.info("DEBBUG dest "+str(dest))
         pick_type = self.env['stock.picking.type'].search([('code','=','incoming'),('default_location_dest_id','parent_of',dest.id)],limit=1)
-        _logger.info("DEBBUG pick ttttt "+str(pick_type))
         if not pick_type:
             pick_type = self.env['stock.picking.type'].search(
                 [('warehouse_id.company_id', '=', self.env.company.id), ('code', '=', 'incoming')],
@@ -102,11 +97,8 @@ class Warehouse(models.Model):
         })
 
         p_ids = self.env['product.product'].browse(products.keys())
-        _logger.info("DEBBUG productos "+str(products))
         for p1 in p_ids:
-            _logger.info("DEBBUG p_ids "+str(products[p1.id]))
             for p2 in products[p1.id]:
-                _logger.info("DEBBUG p2 "+str(products[p1.id][p2]))
                 move = self.env['purchase.order.line'].create({
                     'name': p1.name,
                     'product_id':p1.id,
@@ -139,7 +131,6 @@ class Warehouse(models.Model):
             })
             count.append(temp_count)
         a = {'count': count, 'company': self.get_company_settings()}
-        _logger.info("DEBBUG a "+str(a))
         return a
 
     @api.model
@@ -197,7 +188,6 @@ class Warehouse(models.Model):
     @api.model
     def get_picking(self, pick_id,location_id=False,operation_type=False):
         picking = self.env['stock.picking'].search([('id', '=', pick_id)])
-        _logger.info("DEBBUG wfjkwrejfrjkhfwjiowerfjhklfewrqjklfewqrjklewfqjk")
         conf = False
         if location_id:
             conf = self.env['stock.picking.type'].sudo().operation_type_conf(location_id,operation_type)
@@ -228,7 +218,6 @@ class Warehouse(models.Model):
                 move_ids.extend(picking.move_line_ids_without_package.ids)
             barcodes.extend(self._get_barcodes(picking))
         move_lines = self.env['stock.move.line'].sudo().browse(move_ids)
-        _logger.info("DEBBUG lines "+str(move_lines))
         dict_lines = groupby(move_lines,itemgetter('product_id'))
         for product in dict_lines:
             temp_lines = []
@@ -261,7 +250,6 @@ class Warehouse(models.Model):
 
     @api.model
     def do_unreserve_log(self,pick_id):
-        _logger.info("DEBBUG pìck_id "+str(pick_id))
         pick = self.env['stock.picking'].search([('id', '=', pick_id)], limit=1)
         if pick:
             pick.sudo().do_unreserve()
@@ -271,40 +259,28 @@ class Warehouse(models.Model):
     def validate_picking(self, pick_id, lines, b_order, dest, respon=False, sign=False, scheduled_date=False, delivery_zone_id=False,
     deliver_temperature=False, checked_quality=False, quality_message=False, temperature_quality=False, correct_state_van=False, logged_user_id=False):
         lines = {int(k):v for k,v in lines.items()}
-        _logger.info("DEBBUG 1")
         pick = self.env['stock.picking'].search([('id', '=', pick_id)], limit=1)
         if dest:
             pick.write({'location_dest_id': dest['id']})
-            _logger.info("DEBBUG 2")
         pick.write({
             'responsable': respon,
-            'res_signature': sign,
             'scheduled_date':scheduled_date,
             'deliver_temperature':deliver_temperature
         })
-        _logger.info("DEBBUG 3")
         if not checked_quality and pick.picking_type_code == 'incoming':# and prod.tracking != 'none'
-            _logger.info("DEBBUG 4")
-            _logger.info("DEBBUG cheched quality "+str(checked_quality))
             if quality_message:
-                _logger.info("DEBBUG "+str(quality_message))
                 pick.write({
                     'quality_msg': quality_message
                 })
-                _logger.info("DEBBUG 5")
             pick.write({
                 'quality_check': checked_quality,
                 'state_of_the_van': correct_state_van,
                 'correct_temperature': temperature_quality
             })
-            _logger.info("DEBBUG 6")
             move_ids = []
             for m in pick.move_line_ids_without_package:
-                _logger.info("DEBBUG 7")
                 if not m.quality_check:
-                    _logger.info("DEBBUG 8")
                     move_ids.append(m)
-            _logger.info("DEBBUG bad lines "+str(move_ids))
             quality_check = self.env['quality.check'].sudo().create({
                 'name':_('Quality Check ')+pick.name,
                 'picking_id':pick.id,
@@ -313,13 +289,8 @@ class Warehouse(models.Model):
                 'temperature': pick.correct_temperature,
                 'deliver_temperature': deliver_temperature,
             })
-            _logger.info("DEBBUG 9")
-            _logger.info("DEBBUG quality cgeck "+str(quality_check))
-            _logger.info("DEBBUG move lines "+str(move_ids))
             if quality_check:
-                _logger.info("DEBBUG 10")
                 for m in move_ids:
-                    _logger.info("DEBBUG 11")
                     quality_check.write({
                         'quality_line_ids':[(0,0,{
                             'name': m.product_id.name,
@@ -335,29 +306,20 @@ class Warehouse(models.Model):
                             'overdue_days' : m.overdue_days,
                         })]
                     })
-                _logger.info("DEBBUG 12")
                 if self.env.user.has_group("inventory_log.group_enable_quality_control") and self.env.user.company_id.quality_responsable_user_id and self.env.user.has_group("inventory_log.group_send_quality_mail"):
                     quality_check.sudo().send_mail_template_quality(logged_user_id)
-                    _logger.info("DEBBUG 13")
-        _logger.info("DEBBUG 14")
         need_BO = False
         for move in pick.move_ids_without_package:
-            _logger.info("DEBBUG 15")
             if move.product_uom_qty > move.quantity_done:
-                _logger.info("DEBBUG 16")
                 need_BO = True
-
         if need_BO:
-            _logger.info("DEBBUG 17")
             backorder = self.env['stock.backorder.confirmation'].create({'pick_ids': [(6, _, [pick.id])]}) #{'pick_ids': [(6, _, [pick.id])], 'backorder_confirmation_line_ids': [(0, 0, {'to_backorder': True, 'picking_id': pick.id})]})
             if b_order == 1 or b_order == '1':
-                _logger.info("DEBBUG 18")
                 return backorder.with_context(button_validate_picking_ids = [pick.id]).process()
             else:
-                _logger.info("DEBBUG 19")
                 return backorder.process_cancel_backorder()
-        _logger.info("DEBBUG 20")
-        return pick.with_context(skip_overprocessed_check=True).button_validate()
+        _logger.info("DEBBUG validandddd")
+        return pick.with_context(skip_overprocessed_check=True,skip_expired=True).button_validate()
 
     def multi_validation(self,picking_id,b_order, logged_user_id):
         pick = self.env['stock.picking'].search([('id', '=', picking_id)], limit=1)
@@ -366,14 +328,11 @@ class Warehouse(models.Model):
             for m in pick.move_line_ids_without_package:
                 if not m.correct_state_of_product:
                     move_ids.append(m.id)
-            _logger.info("DEBBUG bad lines "+str(move_ids))
             quality_check = self.env['quality.check'].sudo().create({
                 'name':_('Quality Check ')+pick.name,
                 'picking_id':pick.id,
                 'message': pick.quality_msg
             })
-            _logger.info("DEBBUG quality cgeck "+str(quality_check))
-            _logger.info("DEBBUG move lines "+str(move_ids))
             if quality_check and self.env.user.has_group("inventory_log.group_enable_quality_control") and self.env.user.company_id.quality_responsable_user_id and self.env.user.has_group("inventory_log.group_send_quality_mail"):
                 for m in move_ids:
                     quality_check.write({
@@ -396,8 +355,6 @@ class Warehouse(models.Model):
 
     @api.model
     def validate_pickings(self, pick_ids, b_order, logged_user_id):
-        _logger.info("DEBBUG pick_ids "+str(pick_ids))
-        #picking_ids = self.env['stock.picking'].search([('id', 'in', pick_ids)])
         for pick_id in pick_ids:
             self.multi_validation(pick_id,b_order, logged_user_id)
         return True
@@ -446,8 +403,6 @@ class Warehouse(models.Model):
     @api.model
     def quick_info_reference(self, reference):
         p = self.env['product.product'].search_read([['default_code', 'ilike', reference]],['display_name'])
-        _logger.info("DEBBUG QUICK REFERENCE PRODUCT "+str(p))
-
         self.env['stock.quant']._merge_quants()
         self.env['stock.quant']._unlink_zero_quants()
         if len(p) > 0:
@@ -479,8 +434,6 @@ class Warehouse(models.Model):
 
     @api.model
     def create_scrap(self, lines, logged_user_id, scrap_motive):
-        _logger.info("DEBBUG lines "+str(lines))
-        _logger.info("DEBBUG lines keys "+str(lines.keys()))
         body = ""
         scrap_location = self.env['stock.location'].search([('scrap_location','=',True)],limit=1)
         scraps = []
@@ -540,7 +493,6 @@ class Warehouse(models.Model):
             'location_dest_id': dest.id,
             'picking_type_id': self.env.ref('stock.picking_type_internal').id,
             'responsable': respon,
-            'res_signature': sign,
         })
         moves = []
         p_ids = self.env['product.product'].browse(products.keys())
@@ -572,8 +524,6 @@ class Warehouse(models.Model):
 
     @api.model
     def create_inventory(self, lines, logged_user_id, inv_upd_motive):
-        _logger.info("DEBBUG lines "+str(lines))
-        _logger.info("DEBBUG lines keys "+str(lines.keys()))
         body = ""
         for loc_k in lines.keys():
             products = list(lines[loc_k].keys())
@@ -596,35 +546,24 @@ class Warehouse(models.Model):
                         if lot != -1:
                             lot_id = lines[loc_k][prod_k][lot]['lot_id']['id']
                             expiration_date = lines[loc_k][prod_k][lot]['lot_id']['expiration_date']
-                        _logger.info("DEBBUG product "+str(product_id))
-                        _logger.info("DEBBUG location_id "+str(loc_k))
-                        _logger.info("DEBBUG qty "+str(lines[loc_k][prod_k][lot]['qty']))
-                        _logger.info("DEBBUG prod_lot_id "+str(lot_id))
-                        _logger.info("DEBBUG product_id.tracking "+str(product_id.tracking))
                         if product_id.tracking != 'none':
-                            _logger.info("DEBBUG product k "+str(int(prod_k)))
                             values = {
                                 'inventory_id': inv.id,
-                                # 'name': _("Inventory App ") + str(fields.datetime.now()), 
                                 'product_id': int(prod_k),
                                 'location_id': int(loc_k),
                                 'product_qty': lines[loc_k][prod_k][lot]['qty'],
                                 'prod_lot_id': lot_id,
-                                #'expiration_date':expiration_date
                             }
                             line = self.env['stock.inventory.line'].create(values)
                         else:
                             self.env['stock.inventory.line'].create({
                                 'inventory_id': inv.id,
-                                # 'name': _("Inventory App ") + str(fields.datetime.now()), 
                                 'product_id': int(prod_k),
                                 'location_id': int(loc_k),
                                 'product_qty': lines[loc_k][prod_k][lot]['qty'],
                             })
-            _logger.info("DEBBUG lines "+str(inv.line_ids))
             if self.env.user.has_group("inventory_log.group_enable_inventory_loss") and self.env.user.company_id.inventory_loss_responsable_user_id and self.env.user.has_group("inventory_log.group_send_inventory_loss_mail"):
                 inv.send_mail_template_inventory(logged_user_id, inv_upd_motive)
-            _logger.info("DEBBUG inv "+str(inv.read()))
             inv.action_validate()
 
     @api.model
@@ -712,7 +651,6 @@ class Warehouse(models.Model):
             email_from = 'bot@example.com'
             email_to = self.env.user.company_id.inventory_loss_responsable_user_id.email_formatted
             scrap_lines_html = self.get_scrap_lines(scrap_lines, logged_user, datetime_now, scrap_motive)
-            _logger.info('palabra ' + scrap_lines_html)
             try:
                 template_id = self.env['ir.model.data'].get_object_reference('inventory_log', 'scrap_created_email_template_v1_0')[1]
                 email_values = {
@@ -752,7 +690,6 @@ class Warehouse(models.Model):
             email_from = 'bot@example.com'
             email_to = self.env.user.company_id.inventory_loss_responsable_user_id.email_formatted
             scrap_lines_html = self.get_scrap_inv_transfer_lines(scrap_lines, logged_user, datetime_now, scrap_motive)
-            _logger.info('palabra ' + scrap_lines_html)
             try:
                 template_id = self.env['ir.model.data'].get_object_reference('inventory_log', 'scrap_created_email_template_v1_0')[1]
                 email_values = {
@@ -853,21 +790,14 @@ class Warehouse(models.Model):
     @api.model
     def check_avail(self, products, id):
         msg_error = ""
-
-        # _logger.info("ID " + str(id))
-        # _logger.info(str(products))
         products = {int(k):v for k,v in products.items()}
-
         p_ids = self.env['product.product'].browse(products.keys())
         loc = self.env.user.has_group("inventory_log.group_use_locations")
         for p in p_ids:
-            _logger.info("ID " + str(id))
             if not loc:
                 real_qty = p.with_context(warehouse=id).qty_available
             else:
                 real_qty = p.with_context(location=id).qty_available
-            # _logger.info(str(products[p.id][1]) + " " + str(real_qty))
-            _logger.info("DEBBUG products "+str(products))
             if len(products[p.id]) == 1 and '0' in products[p.id]:
                 if products[p.id]['0'][3] != 'none':
                     if len(msg_error) == 0:
@@ -913,10 +843,7 @@ class Warehouse(models.Model):
         check = self.check_avail(products, orig)
         if type(check) is str:
             return check
-
-        _logger.info(str(products))
         products = {int(k):v for k,v in products.items()}
-
         if self.env.user.has_group("inventory_log.group_use_locations"):
             orig = self.env['stock.location'].browse([orig])[0]
             dest = self.env['stock.location'].browse([dest])[0]
@@ -930,18 +857,9 @@ class Warehouse(models.Model):
             'location_dest_id': dest.id,
             'picking_type_id': self.env.ref('stock.picking_type_internal').id,
             'responsable': respon,
-            'res_signature': sign,
         })
-        _logger.info("DEBBUG name "+str(picking.name))
-        _logger.info("DEBBUG location_id "+str(picking.location_id))
-        _logger.info("DEBBUG location_dest_id "+str(picking.location_dest_id))
-        _logger.info("DEBBUG picking_type_id "+str(picking.picking_type_id))
-        _logger.info("DEBBUG responsable "+str(picking.responsable))
         moves = []
-
         p_ids = self.env['product.product'].browse(products.keys())
-        _logger.info("DEBBUG product "+str(products))
-#if len(products[p.id]) == 1 and products[p.id]['0'][1] > real_qty:
         for p1 in p_ids:
             if len(products[p1.id]) == 1 and '0' in products[p1.id]:
                 move = self.env['stock.move'].create({

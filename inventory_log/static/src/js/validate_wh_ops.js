@@ -36,12 +36,10 @@ var ValidateWHOps = AbstractAction.extend({
         "click .temperature_quality": function(e) {
             var self = this;
             if($('.correct_state_van').is(':checked') && $('.temperature_quality').is(':checked')){
-                console.log("MARCADO 2")
                 !$('.quality_check').prop("checked", self.picking.quality_check);
                 if ( self.picking.quality_check )
                     $(".reason_check").hide();
             } else {
-                console.log("NO MARCADO 2")
                 if($('.quality_check').is(':checked')){
                     !$('.quality_check').prop("checked", false);
                 }
@@ -52,12 +50,10 @@ var ValidateWHOps = AbstractAction.extend({
         "click .correct_state_van": function(e) {
             var self = this;
             if($('.correct_state_van').is(':checked') && $('.temperature_quality').is(':checked')){
-                console.log("MARCADO 2")
                 !$('.quality_check').prop("checked", self.picking.quality_check);
                 if ( self.picking.quality_check )
                     $(".reason_check").hide();
             } else {
-                console.log("NO MARCADO 2")
                 if($('.quality_check').is(':checked')){
                     !$('.quality_check').prop("checked", false);
                 }
@@ -84,8 +80,6 @@ var ValidateWHOps = AbstractAction.extend({
             .then(function (quality_check) {
                 delete Session.lines_done[Session.move_line];
                 self.picking.quality_check = quality_check
-                console.log("self.picking", self.picking)
-
                 self._rpc({
                     model: 'stock.warehouse',
                     method: 'get_stock_move',
@@ -224,20 +218,18 @@ var ValidateWHOps = AbstractAction.extend({
                 model: 'stock.picking',
                 method: 'write',
                 args: [self.picking.id, {scheduled_date: self.scheduled_date,
-                delivery_zone_id: false, deliver_temperature: Session.deliver_temperature}],
+                deliver_temperature: Session.deliver_temperature}],
             });
         },
         "click .cancel_r": function() {
             var self = this;
-            console.log("PIICK ID self.picking ",self.picking)
             this._rpc({
                 model: 'stock.warehouse',
                 method: 'do_unreserve_log',
                 args: [self.picking.id]
             }).then(function(res){
-                console.log("lo cancelo")
                 self.start()  
-                core.bus.off('barcode_scanned', this, this._onBarcodeScanned);
+                core.bus.off('barcode_scanned', self, self._onBarcodeScanned);
             });
         },
         "click .validate": function(e) {
@@ -248,9 +240,13 @@ var ValidateWHOps = AbstractAction.extend({
             var quality_message = false;
             var temperature_quality = false;
             var correct_state_van = false;
+
+            var self = this;
+            var msg = ""
+            var value = self.check_lines()
             console.log("Value ",value)
             $(".force_validate").prop('disabled', false);
-
+    
             switch(value){
                 case 3:
                     msg += _t("<p>You have processed more than what was initially planned. Are you sure you want to validate the picking?</p><br/>");
@@ -264,53 +260,19 @@ var ValidateWHOps = AbstractAction.extend({
                     break;
             }
             if (value != 0){
-                $(".modal-title").html(_t("Warning"));
-                $(".modal-body").html(msg);
-                $(".modal").modal('show')
-                return;
-            }
-            if (Session.respon || self.picking.picking_type_code == 'outgoing'  && Session.company_settings.signature){
-                $("#GenericModalTitle").html(_t("Signature"));
-                var html = "";
-                html +=    "<div class='o_canvas_container'>";
-                html += _t("<canvas id='myCanvas' class='o_signature_canvas'> Canvas not supported</canvas>");
-                html +=    "<input name='signature' id='signature' type='hidden'/>";
-                html +=    "<div class='o_canvas_clear_button_container'>";
-                html += _t("<button id='clear' class='btn btn-primary'>Clear</button><br/>");
-                html +=    "</div></div>";
-                $("#GenericModalBody").html(html);
-                $(".force_validate").prop('disabled', true);
+                $("#GenericModalTitle").html(_t("Warning"));
+                $("#GenericModalBody").html(msg);
                 $("#GenericModal").modal('show');
-                this.canvas.canvas_html_element($('#myCanvas'));
-                this.canvas.clear_html_clickable_element($('#clear'));
-    
-                this.canvas.myCanvas.bind('mouseup', function(e) {
-                    if(!self.canvas.its_signed) {
-                        self.canvas.its_signed = true;
-                        // let sig_64 = self.canvas.myCanvas[0].toDataURL();
-                        // self.image_canvas = sig_64.split(',')[1]; 
-                        $(".force_validate").prop('disabled', false);
-                        // $('.modal_body_fotter').html(QWeb.render("SignatureModalFotter", {widget: self, from:from})); 
-                    }
-                });
-                this.canvas.$clear.bind('click', function(e) {
-                    if(self.canvas.its_signed) {
-                        self.canvas.its_signed = false;
-                        $(".force_validate").prop('disabled', true);
-                        // $('.modal_body_fotter').html(QWeb.render("SignatureModalFotter", {widget: self, from:from}));
-                    }
-                });
-                
+                console.log("valueeee");
                 return;
             }
             $('body').removeClass('modal-open');
             $('.modal-backdrop').remove();
             console.log('validar', self)
-
+            
             if(!$('.quality_check').is(':checked')){
                 checked_quality = false;
                 if($('.reason_state').val()){
-                    console.log("Reason1 ",$('.reason_state').val());
                     quality_message = $('.reason_state').val();
                 }
             }
@@ -320,8 +282,7 @@ var ValidateWHOps = AbstractAction.extend({
             if($('.correct_state_van').is(':checked')){
                 correct_state_van = true;
             }
-            $('body').removeClass('modal-open');
-            $('.modal-backdrop').remove();
+            
             Session.scheduled_date = $('#start').val()+' '+$('#appt').val();
             Session.delivery_zone_id = false;
             
@@ -362,51 +323,15 @@ var ValidateWHOps = AbstractAction.extend({
             var temperature_quality = false;
             var correct_state_van = false;
             if (typeof(self.b_order) == undefined)
-                self.b_order = false;
-            if (value == 2 || value == 3){
-                if ($("#b_order").val())
-                    self.b_order = $("#b_order").val();
-            } else self.b_order = false;
+            self.b_order = false;
+        if (value == 2 || value == 3){
+            if ($("#b_order").val())
+                self.b_order = $("#b_order").val();
+        } else self.b_order = false;
 
-            if ((Session.respon || self.picking.picking_type_code == 'outgoing') && self.canvas && !self.canvas.its_signed  && Session.company_settings.signature){
-                console.log("EEEEEY 1");
-                $(".modal-title").html(_t("Signature"));
-                var html = "";
-                html +=    "<div class='o_canvas_container'>";
-                html += _t("<canvas id='myCanvas' class='o_signature_canvas'> Canvas not supported</canvas>");
-                html +=    "<input name='signature' id='signature' type='hidden'/>";
-                html +=    "<div class='o_canvas_clear_button_container'>";
-                html += _t("<button id='clear' class='btn btn-primary'>Clear</button><br/>");
-                html +=    "</div></div>";
-                $(".modal-body").html(html);
-                $(".modal").modal('show');
-                $(".force_validate").prop('disabled', true);
-                this.canvas.canvas_html_element($('#myCanvas'));
-                this.canvas.clear_html_clickable_element($('#clear'));
-
-                this.canvas.myCanvas.bind('mouseup', function(e) {
-                    if(!self.canvas.its_signed) {
-                        self.canvas.its_signed = true;
-                        // let sig_64 = self.canvas.myCanvas[0].toDataURL();
-                        // self.image_canvas = sig_64.split(',')[1]; 
-                        $(".force_validate").prop('disabled', false);
-                        // $('.modal_body_fotter').html(QWeb.render("SignatureModalFotter", {widget: self, from:from})); 
-                    }
-                });
-                this.canvas.$clear.bind('click', function(e) {
-                    if(self.canvas.its_signed) {
-                        self.canvas.its_signed = false;
-                        $(".force_validate").prop('disabled', true);
-                        // $('.modal_body_fotter').html(QWeb.render("SignatureModalFotter", {widget: self, from:from}));
-                    }
-                });
-                
-                return;
-            }
             if(!$('.quality_check').is(':checked')){
                 checked_quality = false;
                 if($('.reason_state').val()){
-                    console.log("Reason2 ",$('.reason_state').val());
                     quality_message = $('.reason_state').val();
                 }
             }
@@ -430,8 +355,6 @@ var ValidateWHOps = AbstractAction.extend({
             if($(".temperature").val()){
                 Session.deliver_temperature =  $(".temperature").val().replace(',','.');
             }
-            console.log("goint to validate")
-            console.log("quality_message2 ",$('.reason_state').val())
             this._rpc({
                 model: 'stock.warehouse',
                 method: 'validate_picking',
@@ -439,7 +362,6 @@ var ValidateWHOps = AbstractAction.extend({
                     ,Session.scheduled_date,false,Session.deliver_temperature,
                     checked_quality,quality_message,temperature_quality,correct_state_van, Session.uid]
             }).then(function(res){
-                console.log("RES ",res)
                 Session.line_pick = undefined;   
                 Session.dest = undefined;   
                 Session.respon = undefined;
@@ -511,7 +433,6 @@ var ValidateWHOps = AbstractAction.extend({
                 method: 'action_assign_kanban',
                 args: [Session.picking.id],
             }).then(function(result){
-                console.log('action_assign_kanban', result)
                 if (result == 'assigned') {
                     Session.picking = {"id": Session.picking.id};
                     self.do_action("inventory_log.validate_wh_ops");
@@ -544,7 +465,6 @@ var ValidateWHOps = AbstractAction.extend({
     },
     start: async function () {
         this._super();
-        console.log("asd")
         Session.counter = -1;
         Session.in_group = false
         var self = this;
@@ -554,20 +474,16 @@ var ValidateWHOps = AbstractAction.extend({
                 });
             return;
         }
-        console.log("CONSOLE LOG 1");
         if (!Session.line_pick){
-            console.log("CONSOLE LOG 2");
             Session.line_pick = {};
         }
         this.canvas = new canvas();
-        console.log("Canvas ",this.canvas)
         this._rpc({
                 model: 'stock.warehouse',
                 method: 'get_picking',
                 args: [Session.picking.id,Session.location_id,Session.picking_type],
             }).then(function(result){
                 if (result.picking.length > 0){
-                    console.log("Result picking ",result.picking)
                     self.picking = result.picking[0];
                     self.scheduled_date = self.picking.scheduled_date;
                     self.zones = result.zones;
@@ -575,9 +491,7 @@ var ValidateWHOps = AbstractAction.extend({
                     if ( self.picking.quality_check )
                         $(".reason_check").hide();
                 }
-
                 else {
-                    console.log("Doing acitonsss ")
                     self.do_action({
                         type: 'ir.actions.client',
                         name: _t('Warehouse Operations'),
@@ -585,19 +499,12 @@ var ValidateWHOps = AbstractAction.extend({
                         target: 'fullscreen',
                     }, {clear_breadcrumbs: true}); 
                 }
-                console.log("Session barcodes ",result.barcodes)
                 self.type = self.picking.picking_type_code;
                 Session.picking_type_code = self.type;
                 Session.barcodes = result.barcodes
                 Session.line_pick = {}
                 Session.lines_done = {}
                 Session.line_pick_not_reserved = {}
-                /*result.stock_move.forEach(function(l) {
-                    if(l.quantity_done != l.product_uom_qty){
-                        Session.line_pick[l.id] = {name:l.product_id[1], product_uom_qty:l.product_uom_qty, quantity_done: l.quantity_done,reserved_availability:l.reserved_availability};
-                    }
-                });*/
-                console.log("Result lines ",result.stock_move_line)
                 result.stock_move_line.forEach(function(l) {
                     if(l.qty_done != l.product_uom_qty && l.product_uom_qty!=0 && l.qty_done < l.product_uom_qty){
                         Session.line_pick[l.id] = {name:l.product_id[1], product_uom_qty:l.product_uom_qty, quantity_done: l.qty_done,reserved_availability:l.product_uom_qty,lot_id:l.lot_id, expired: l.expired};
@@ -606,18 +513,13 @@ var ValidateWHOps = AbstractAction.extend({
                         Session.lines_done[l.id] = {name:l.product_id[1], product_uom_qty:l.product_uom_qty, quantity_done: l.qty_done,lot_id:l.lot_id, expired: l.expired};
                     }
                 });
-                console.log("Session lines pick ",Session.line_pick)
-                console.log("Session lines done ",Session.lines_done)
-                console.log("Result lines ",result.stock_move)
                 result.stock_move.forEach(function(l) {
                     if(l.reserved_availability==0){
                         Session.line_pick_not_reserved[l.id] = {name:l.product_id[1], quantity_done: l.quantity_done,reserved_availability:l.reserved_availability,lot_id:l.lot_id};   
                     }
                 });
-                console.log("line_pick_not_reserved ",Session.line_pick_not_reserved)
                 core.bus.on('barcode_scanned', self, self._onBarcodeScanned);
                 self.$el.html( QWeb.render("ValidateWHOpsXML", {picking: self.picking, completed_lines: Session.lines_done , lines: Session.line_pick, dest: Session.dest, respon: Session.respon, zones: self.zones,states: self.states,date: self.picking.scheduled_date.split(' '), options: Session.company_settings, p_type: Session.picking_type_code, is_in_group:Session.company_settings.quality_control_group}));
-                console.log("self.picking ",self.picking)
                 if(self.picking.quality_check){
                     $(".reason_check").hide();
                 }
@@ -639,7 +541,6 @@ var ValidateWHOps = AbstractAction.extend({
                 result += 1;
         });
         if (Object.keys(Session.line_pick_not_reserved).length > 0 && result != 2){
-            console.log("NO hay reserva")
             result += 2;
         }
         return result;
@@ -657,11 +558,8 @@ var ValidateWHOps = AbstractAction.extend({
             args: [barcode,],
         }).then(function(res){
             if (res.length > 0){
-                console.log("BARCODE res",res[[1]]);
-                console.log("Session barcides ",Session.barcodes)
                 Session.barcodes.forEach(function(l) {
-                    console.log("produdcct id ",l.product_id);
-                    console.log("pppsss ",res[[1]].barcode);
+
                     if(l.product_id === res[[1]].barcode){
                         if(!found){
                             found = l.line;

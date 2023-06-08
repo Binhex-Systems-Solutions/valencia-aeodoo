@@ -15,7 +15,6 @@ var InvUpdate = AbstractAction.extend({
     /* EVENTS */
      events: {
         "click #add": function(e) {
-            console.log("Session lines 2 ",Session.lines);
             e.preventDefault();
             if (!Session.inv_orig){
                 $(".modal-title").html(_t("Location not set"));
@@ -45,7 +44,6 @@ var InvUpdate = AbstractAction.extend({
         },
         "click .confirm": function(e) {
             var self = this;
-            console.log("Session lines 1 ",Session.lines);
             if (Object.keys(Session.lines).length < 1){
                 $(".modal-title").html(_t("Number of products must be higher than 0"));
                 // $(".modal-body").html(_t("<p>Number of products must be higher than 0.</p>"));
@@ -73,7 +71,6 @@ var InvUpdate = AbstractAction.extend({
                 $(".modal").modal('show')
                 return;
             }
-            console.log('session lines scrap', Session.lines)
             this._rpc({
                 model: 'stock.warehouse',
                 method: 'create_scrap',
@@ -120,11 +117,7 @@ var InvUpdate = AbstractAction.extend({
                 'product_id':ids[2],
                 'lot_id':ids[3]
             }
-            console.log("Session.update_inv  ",Session.update_inv )
-            console.log("current target $(e.currentTarget) ",$(e.currentTarget))
-            console.log("parent ",$(e.currentTarget).parent())
             var id = $(e.currentTarget).parent().attr('class').split(/_/)[2];
-            console.log("id ",id)
             var m = new Date();
             var domain = false;
             var dateString =
@@ -134,9 +127,7 @@ var InvUpdate = AbstractAction.extend({
                 ("0" + m.getUTCHours()).slice(-2) + ":" +
                 ("0" + m.getUTCMinutes()).slice(-2) + ":" +
                 ("0" + m.getUTCSeconds()).slice(-2);
-            console.log("Today tine ",dateString);
             domain = [['product_id','=',parseInt(id)]];
-            console.log("Domain ",domain)
             this.do_action('inventory_log.lot_kanban_action',{
                 additional_context: {
                     domain: domain,
@@ -151,8 +142,6 @@ var InvUpdate = AbstractAction.extend({
         if(!Session.a_type){
             Session.a_type = this.a_type;
         }
-        
-        console.log("init Session.a_type ",Session.a_type)
     },
     start: async function () {
         this._super();
@@ -165,31 +154,22 @@ var InvUpdate = AbstractAction.extend({
         }
         if (typeof(Session.lines) == "undefined")
             Session.lines = {};
-        console.log("INVE ",Session.update_inv)
         if(Session.lines && Session.update_inv) {
-            console.log("ZUZAAAANANA Session lines ",Session.lines);
-            console.log("ZUZAAAANANA Session.update_inv.location_id ",Session);
             var temp = Session.lines[Session.update_inv.location_id][Session.update_inv.product_id][-1]
             var barcode = false;
             if (!temp){
                 temp = Session.lines[Session.update_inv.location_id][Session.update_inv.product_id][0]
                 barcode = true;
             }
-            console.log("Temp ",temp)
-            console.log("sesison lines 1 ",Session.lines)
             delete Session.lines[Session.update_inv.location_id][Session.update_inv.product_id][-1]
             if(barcode){
                 delete Session.lines[Session.update_inv.location_id][Session.update_inv.product_id][0]
             }
             temp.lot_id = Session.changed_lot
-            console.log("Temp 2 ",temp)
-            console.log("sesison lines 2 ",Session.lines)
             Session.lines[Session.update_inv.location_id][Session.update_inv.product_id][Session.changed_lot.id] = temp
             Session.changed_lot = undefined;
             Session.update_inv = undefined;
         }
-        
-        console.log("Session lines ", Session.lines)
         core.bus.on('barcode_scanned', this, this._onBarcodeScanned);
         self.$el.html( QWeb.render("InvUpdXML", {location: Session.inv_orig, lines:Session.lines, a_type: Session.a_type}));
     },
@@ -202,7 +182,6 @@ var InvUpdate = AbstractAction.extend({
             method: 'check_barcode_inv',
             args: [barcode,],
         }).then(function(res){
-            console.log("REEEES ",res);
                 if (res['l'].length > 0){
                     Session.inv_orig = res['l'][0]
                     self.$el.html( QWeb.render("InvUpdXML", {'location':Session.inv_orig, 'lines':Session.lines,a_type: Session.a_type}));

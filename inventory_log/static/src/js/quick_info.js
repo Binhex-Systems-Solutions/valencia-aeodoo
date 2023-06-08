@@ -150,9 +150,6 @@ var QuickInfo = AbstractAction.extend({
     },
     _onBarcodeScanned: function(barcode) {
         var self = this;
-        alert(barcode)
-
-        
         core.bus.off('barcode_scanned', this, this._onBarcodeScanned);
         var lot_id = false;
 
@@ -161,7 +158,6 @@ var QuickInfo = AbstractAction.extend({
                 method: 'quick_info_barcode',
                 args: [barcode,self.barcode_type,lot_id],
             }).then(function(res){
-                console.log("RES ",res)
                 if (!res){
                     $(".modal-title").html(_t("Barcode not found"));
                     $(".modal").modal('show');
